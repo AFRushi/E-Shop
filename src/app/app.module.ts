@@ -17,6 +17,7 @@ import { PageNoFoundComponent } from './component/page-no-found/page-no-found.co
 import { ProductItemComponent } from './component/shopping-main/product-list/product-item/product-item.component';
 import { CartItemComponent } from './component/shopping-main/cart/cart-item/cart-item.component';
 import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi.component';
+import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 
 
 
@@ -37,7 +38,8 @@ import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi
     PageNoFoundComponent,
     ProductItemComponent,
     CartItemComponent,
-    ApplyEmiComponent
+    ApplyEmiComponent,
+    ViewDetailsComponent
   ],
   imports: [
     BrowserModule,
