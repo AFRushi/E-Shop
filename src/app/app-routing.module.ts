@@ -8,6 +8,7 @@ import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi
 
 import { ShoppingMainComponent } from './component/shopping-main/shopping-main.component';
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
+import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path : 'Cart', component : CartComponent},
   { path : 'Apply', component : ApplyEmiComponent},
   { path : 'View-Details', component : ViewDetailsComponent},
+  { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : '**', component : PageNoFoundComponent}
 ];
 
