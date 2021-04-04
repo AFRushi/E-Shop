@@ -7,12 +7,14 @@ import { CartComponent } from './component/shopping-main/cart/cart.component';
 import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi.component'
 
 import { ShoppingMainComponent } from './component/shopping-main/shopping-main.component';
+import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
   { path : 'Register' , component : RegisterComponent},
   { path : 'Cart', component : CartComponent},
   { path : 'Apply', component : ApplyEmiComponent},
+  { path : 'View-Details', component : ViewDetailsComponent},
   { path : '**', component : PageNoFoundComponent}
 ];
 
