@@ -19,6 +19,7 @@ import { CartItemComponent } from './component/shopping-main/cart/cart-item/cart
 import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi.component';
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
+import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
 
 
 
@@ -41,7 +42,8 @@ import { ForgotPasswordComponent } from './component/login/forgot-password/forgo
     CartItemComponent,
     ApplyEmiComponent,
     ViewDetailsComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    EmiCardComponent
   ],
   imports: [
     BrowserModule,

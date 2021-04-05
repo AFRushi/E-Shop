@@ -5,7 +5,7 @@ import { PageNoFoundComponent } from './component/page-no-found/page-no-found.co
 import { RegisterComponent } from './component/register/register.component';
 import { CartComponent } from './component/shopping-main/cart/cart.component';
 import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi.component'
-
+import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
 import { ShoppingMainComponent } from './component/shopping-main/shopping-main.component';
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path : 'Register' , component : RegisterComponent},
   { path : 'Cart', component : CartComponent},
   { path : 'Apply', component : ApplyEmiComponent},
+  { path : 'CardDetails', component : EmiCardComponent},
   { path : 'View-Details', component : ViewDetailsComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : '**', component : PageNoFoundComponent}
