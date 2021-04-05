@@ -10,9 +10,16 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a [routerLink]="['/Apply']" class="nav-link">Apply EMI Card</a>
-                </li>
+                <div *ngIf="!IsApproved">
+                    <li class="nav-item">
+                        <a [routerLink]="['/Apply']" class="nav-link">Apply EMI Card</a>
+                    </li>
+                </div>
+                <div *ngIf="IsApproved">
+                    <li class="nav-item">
+                        <a [routerLink]="['/CardDetails']" class="nav-link">EMI Card Details</a>
+                    </li>
+                </div>
                 <li class="nav-item">
                     <a class="nav-link" href="#">SmartPhones</a>
                 </li>

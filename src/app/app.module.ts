@@ -18,6 +18,7 @@ import { ProductItemComponent } from './component/shopping-main/product-list/pro
 import { CartItemComponent } from './component/shopping-main/cart/cart-item/cart-item.component';
 import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi.component';
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
+import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
 
 
 
@@ -39,7 +40,8 @@ import { ViewDetailsComponent } from './component/shopping-main/view-details/vie
     ProductItemComponent,
     CartItemComponent,
     ApplyEmiComponent,
-    ViewDetailsComponent
+    ViewDetailsComponent,
+    EmiCardComponent
   ],
   imports: [
     BrowserModule,
