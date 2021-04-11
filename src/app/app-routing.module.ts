@@ -9,6 +9,7 @@ import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi
 import { ShoppingMainComponent } from './component/shopping-main/shopping-main.component';
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
+import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path : 'Apply', component : ApplyEmiComponent},
   { path : 'View-Details', component : ViewDetailsComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
+  { path : 'admin-login' ,component:AdminLoginComponent},
   { path : '**', component : PageNoFoundComponent}
 ];
 
