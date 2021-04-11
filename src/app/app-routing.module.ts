@@ -9,6 +9,8 @@ import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.co
 import { ShoppingMainComponent } from './component/shopping-main/shopping-main.component';
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
+import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
+
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
@@ -17,8 +19,10 @@ const routes: Routes = [
   { path : 'Apply', component : ApplyEmiComponent},
   { path : 'CardDetails', component : EmiCardComponent},
   { path : 'View-Details', component : ViewDetailsComponent},
+  { path : 'Order-History', component : OrderHistoryComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : '**', component : PageNoFoundComponent}
+  
 ];
 
 @NgModule({

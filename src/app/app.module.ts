@@ -20,6 +20,7 @@ import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
 import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
+import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
 
 
 
@@ -43,7 +44,8 @@ import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.co
     ApplyEmiComponent,
     ViewDetailsComponent,
     ForgotPasswordComponent,
-    EmiCardComponent
+    EmiCardComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
