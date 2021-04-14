@@ -1,0 +1,48 @@
+<!-- <p>all-products works!</p> -->
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Products List</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th *ngFor="let product of productsHeader" scope="col">{{product}}</th>
+                    </tr>
+
+
+                </thead>
+                <tbody style="height: 600px;overflow: scroll;">
+                    <tr *ngFor="let product of products">
+
+                        <td>{{product.product_id}}</td>
+                        <td><img src="assets/ProductsImage/1_SmartPhone_realme-narzo-20.jpeg" class="mh-100" style="width: 50px; height: 100px;"></td>
+                        <td>{{product.product_name}}</td>
+                        <td>{{product.color}}</td>
+                        <td>{{product.smallDesc}}</td>
+                        <td>{{product.price| currency:'INR'}}</td>
+                        <td>{{product.qty}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-info" (click)="openDetails(contentDetails,user)">
+                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" (click)="openApprove(contentDelete, user)">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- <tr *ngFor="let user of userData">
+
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phoneNumber}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="onEdit(user)"> edit</button>
+                            <button class="btn btn-primary" (click)="onDelete(user)">delete</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

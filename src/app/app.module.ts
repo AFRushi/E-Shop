@@ -22,10 +22,12 @@ import { ViewDetailsComponent } from './component/shopping-main/view-details/vie
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
 import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
 import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
-
-
-
-
+import { AdminComponentComponent } from './component/adminComponent/admin-component.component';
+import { AppliedForCardComponent } from './component/adminComponent/user/applied-for-card/applied-for-card.component';
+import { ApprovedUsersComponent } from './component/adminComponent/user/approved-users/approved-users.component';
+import { AdminHeaderComponent } from './component/adminComponent/adminShared/admin-header/admin-header.component';
+import { AdminSidebarComponent } from './component/adminComponent/adminShared/admin-sidebar/admin-sidebar.component';
+import { AllProductsComponent } from './component/adminComponent/user/all-products/all-products.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,14 @@ import { OrderHistoryComponent } from './component/shopping-main/order-history/o
     ViewDetailsComponent,
     ForgotPasswordComponent,
     EmiCardComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    AdminComponentComponent,
+    AppliedForCardComponent,
+    ApprovedUsersComponent,
+    AdminHeaderComponent,
+    AdminSidebarComponent,
+    AllProductsComponent,
+    
   ],
   imports: [
     BrowserModule,
