@@ -22,6 +22,10 @@ import { ViewDetailsComponent } from './component/shopping-main/view-details/vie
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
 import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
 import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
+import { ImageSliderComponent } from './component/shopping-main/image-slider/image-slider.component';
+import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
+import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
+import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 
 
 
@@ -46,7 +50,11 @@ import { OrderHistoryComponent } from './component/shopping-main/order-history/o
     ViewDetailsComponent,
     ForgotPasswordComponent,
     EmiCardComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    ImageSliderComponent,
+    SideBarComponent,
+    CheckoutComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
