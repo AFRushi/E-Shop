@@ -1,0 +1,28 @@
+<!-- <p>admin-component works!</p> -->
+<div id="wrapper">
+
+    <app-admin-sidebar></app-admin-sidebar>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+
+            <app-admin-header></app-admin-header>
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4"> -->
+                <!-- <div class="main-content"> -->
+
+                <router-outlet></router-outlet>
+
+                <!-- </div> -->
+            </div>
+
+        </div>
+    </div>
+    <a class="scroll-to-top rounded " routerLink="appliedUsers">
+        <i class="fas fa-angle-up "></i>
+    </a>
+</div>

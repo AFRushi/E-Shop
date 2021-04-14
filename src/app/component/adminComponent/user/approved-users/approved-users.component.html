@@ -1,0 +1,103 @@
+<!-- <p>approved-users works!</p> -->
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Display User List</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th *ngFor="let head of headElements" scope="col">{{head}}</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of elements">
+
+                        <td>{{user.user_id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.dateOfbirth}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone_no}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-info" (click)="openDetails(contentDetails,user)">
+                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                            </button>
+                            <!-- <button class="btn btn-sm btn-danger" (click)="openApprove(contentDelete, user)">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                            </button> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #contentDetails let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="user_id">User ID</label>
+                <div class="input-group">
+                    <input id="user_id" class="form-control" disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">User Name</label>
+                <div class="input-group">
+                    <input id="name" class="form-control" disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateOfbirth">D.O.B</label>
+                <div class="input-group">
+                    <input id="dateOfbirth" class="form-control" disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <div class="input-group">
+                    <input id="email" class="form-control" disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label> Phone Number</label>
+                <div class="input-group">
+                    <input id="phone_no" class="form-control" disabled="true">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+    </div>
+</ng-template>
+
+<!-- 
+Delete -->
+<ng-template #contentDelete let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Approve The User</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <h2>Are you sure you want to approve this user record.</h2>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-primary" (click)="onApprove()"> Yes, Approve!</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+    </div>
+</ng-template>
