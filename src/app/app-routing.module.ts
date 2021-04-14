@@ -14,6 +14,9 @@ import { AppliedForCardComponent } from './component/adminComponent/user/applied
 import { ApprovedUsersComponent } from './component/adminComponent/user/approved-users/approved-users.component';
 import { AllProductsComponent } from './component/adminComponent/user/all-products/all-products.component';
 import { AdminComponentComponent } from './component/adminComponent/admin-component.component';
+import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
+import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
+import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
@@ -24,6 +27,9 @@ const routes: Routes = [
   { path : 'CardDetails', component : EmiCardComponent},
   { path : 'View-Details', component : ViewDetailsComponent},
   { path : 'Order-History', component : OrderHistoryComponent},
+  { path : 'Side-Bar', component : SideBarComponent},
+  { path : 'Checkout', component : CheckoutComponent},
+  { path : 'About-Us', component : AboutUsComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : 'appliedUsers', component:AppliedForCardComponent},
   { path : 'approvedUsers', component:ApprovedUsersComponent},

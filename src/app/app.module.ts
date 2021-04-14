@@ -28,6 +28,14 @@ import { ApprovedUsersComponent } from './component/adminComponent/user/approved
 import { AdminHeaderComponent } from './component/adminComponent/adminShared/admin-header/admin-header.component';
 import { AdminSidebarComponent } from './component/adminComponent/adminShared/admin-sidebar/admin-sidebar.component';
 import { AllProductsComponent } from './component/adminComponent/user/all-products/all-products.component';
+import { ImageSliderComponent } from './component/shopping-main/image-slider/image-slider.component';
+import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
+import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
+import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -56,6 +64,10 @@ import { AllProductsComponent } from './component/adminComponent/user/all-produc
     AdminSidebarComponent,
     AllProductsComponent,
     
+    ImageSliderComponent,
+    SideBarComponent,
+    CheckoutComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

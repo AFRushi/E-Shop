@@ -57,5 +57,6 @@ export class AppliedForCardComponent implements OnInit {
 
   onApprove(){
     // Servicecode
+    
   }
 }
