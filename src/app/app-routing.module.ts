@@ -10,6 +10,9 @@ import { ShoppingMainComponent } from './component/shopping-main/shopping-main.c
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
 import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
+import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
+import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
+import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
@@ -20,6 +23,9 @@ const routes: Routes = [
   { path : 'CardDetails', component : EmiCardComponent},
   { path : 'View-Details', component : ViewDetailsComponent},
   { path : 'Order-History', component : OrderHistoryComponent},
+  { path : 'Side-Bar', component : SideBarComponent},
+  { path : 'Checkout', component : CheckoutComponent},
+  { path : 'About-Us', component : AboutUsComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : '**', component : PageNoFoundComponent}
   
