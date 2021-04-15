@@ -105,6 +105,7 @@
             ]
           }
         },
+        
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -122,3 +123,4 @@
   },
   "defaultProject": "E-Shop"
 }
+

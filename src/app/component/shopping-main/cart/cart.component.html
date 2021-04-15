@@ -1,17 +1,124 @@
-<div *ngIf="cartItems.length === 0" class="alert alert-info">Your Cart is Empty.</div>
-
-<ul *ngIf="cartItems.length > 0" class="list-group">
-    <li class="list-group-item" *ngFor="let item of cartItems">
-        <app-cart-item [cartItem]="item"></app-cart-item>
-    </li>
-
-    <li class="list-group-item active">
-        <strong>Total</strong> {{ cartTotal | currency:'INR' }}
-    </li>    
-</ul>
-
-
-<div class="col-md-8">
-    <a href="#" class="btn btn-primary" [routerLink]="['/Checkout']">Proceed to Checkout</a>
-
-</div>
+<!-- Mini Cart -->
+<div class="modal fade" id="quoteForm" tabindex="-1" role="dialog" aria-labelledby="quoteForm" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content p-md-3">
+        <div class="modal-header">
+          <h4 class="modal-title"><span class="text-primary">Cart</span></h4>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+        
+                  <!-- Shopping cart table -->
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="border-0 bg-light">
+                            <div class="p-2 px-3 text-uppercase">Product</div>
+                          </th>
+                          <th scope="col" class="border-0 bg-light">
+                            <div class="py-2 text-uppercase">Price</div>
+                          </th>
+                          <th scope="col" class="border-0 bg-light">
+                            <div class="py-2 text-uppercase">Quantity</div>
+                          </th>
+                          <th scope="col" class="border-0 bg-light">
+                            <div class="py-2 text-uppercase">Remove</div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="border-0">
+                            <div class="p-2">
+                              <img src="https://therichpost.com/wp-content/uploads/2020/06/jeans3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                              <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                              </div>
+                            </div>
+                          </th>
+                          <td class="border-0 align-middle"><strong>$79.00</strong></td>
+                          <td class="border-0 align-middle"><strong>3</strong></td>
+                          <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <div class="p-2">
+                              <img src="https://therichpost.com/wp-content/uploads/2020/06/jeans3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                              <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
+                              </div>
+                            </div>
+                          </th>
+                          <td class="align-middle"><strong>$79.00</strong></td>
+                          <td class="align-middle"><strong>3</strong></td>
+                          <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <div class="p-2">
+                              <img src="https://therichpost.com/wp-content/uploads/2020/06/jeans3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                              <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+                              </div>
+                            </div></th>
+                            <td class="align-middle"><strong>$79.00</strong></td>
+                            <td class="align-middle"><strong>3</strong></td>
+                            <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- End -->
+                </div>
+              </div>
+        
+              <div class="row py-5 p-4 bg-white rounded ">
+                <div class="col-lg-6">
+                    <div class="card bg-light">                
+                        <div class="card-body text-left" >
+                          <p class="card-text" >Card Number:</p>
+                          <p class="card-text" >Name:</p>
+                          <p class="card-text" >Valid Till:</p>
+                          <p class="card-text" >Card Type:</p>                          
+                        </div>
+                        <div class="card-body text-center" >
+                        <p class="bg-success text-black">ACTIVATED</p></div>
+                      </div>                  
+                  
+                  <div class="p-4">
+                    <p class="font-weight-normal mb-4">TOTAL CREDIT:</p>
+                    <p class="font-weight-normal mb-4">CREDIT USED:</p>
+                    <p class="font-weight-normal mb-4">REMAINING CREDIT:</p>
+                    
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                  <div class="p-4">
+                    <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+                    <ul class="list-unstyled mb-4">
+                      <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>&#8377;390.00</strong></li>
+                      <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping</strong><strong>&#8377;10.00</strong></li>
+                      <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>&#8377;0.00</strong></li>
+                      <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                        <h5 class="font-weight-bold">&#8377;400.00</h5>
+                      </li>
+                    </ul><a href="#" class="btn btn-primary rounded-pill btn-block" >Proceed to checkout</a>
+                  </div>
+                </div>
+              </div>
+        
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+</div>   
