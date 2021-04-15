@@ -7,8 +7,10 @@
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav">
+			<a [routerLink]="['/admin-login']" data-toggle="dropdown" class="btn btn-primary mr-4">Admin</a>
 			<a href="#" class="nav-item nav-link">Home</a>
-			<a href="#" class="nav-item nav-link">About</a>			
+			<a href="#" class="nav-item nav-link">About</a>	
+			<a href="#" class="nav-item nav-link">Contact</a>		
 			<!--
 			<div class="nav-item dropdown">
 				<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">Services</a>
@@ -21,31 +23,21 @@
             </div>
 			<a href="#" class="nav-item nav-link active">Pricing</a>
 			<a href="#" class="nav-item nav-link">Blog</a>
-			-->
-			<a href="#" class="nav-item nav-link">Contact</a>
+			-->			
 		</div>
-		<form class="navbar-form form-inline">
-			<div class="input-group search-box">								
-				<input type="text" id="search" class="form-control" placeholder="Search here...">
-				<div class="input-group-append">
-					<span class="input-group-text">
-						<i class="material-icons">&#xE8B6;</i>
-					</span>
-				</div>
-			</div>
-		</form>
+
 		<div class="navbar-nav ml-auto action-buttons">
-			<!--
+			
 			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">Login</a>
-				<div class="dropdown-menu">					
+				<a [routerLink]="['/Login']" data-toggle="dropdown" class="btn btn-primary dropdown-toggle mr-3">Login</a>
+				<!--<div class="dropdown-menu">					
 					<a [routerLink]="['/Login']" class="dropdown-item">Login as User</a>
 					<a [routerLink]="['/admin-login']" class="dropdown-item">Login as Admin</a>					
-                </div>
+                </div>-->
 			</div>
-			-->
+			
 			<div class="nav-item dropdown">
-				<a [routerLink]="['/admin-login']" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Admin</a>
+				<a [routerLink]="['/Register']" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Register</a>
 			</div>
         </div>
 	</div>

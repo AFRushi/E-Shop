@@ -19,19 +19,6 @@ function passwordsMatchValidator(form) {
   return null
 }
 
-/**
- * If the data is valid return null else return an object
- */
-function symbolValidator(control) { //control = registerForm.get('password')
-  if(control.hasError('required')) return null;
-  if(control.hasError('minlength')) return null;
-
-  if(control.value.indexOf('@') > -1) {
-    return null
-  } else {
-    return { symbol: true }
-  }
-}
 
 @Component({
   selector: 'app-register',
@@ -55,7 +42,8 @@ export class RegisterComponent implements OnInit {
       mobile:['',Validators.required],
       username: ['', Validators.required],
       address: ['', Validators.required],
-      password: ['', [Validators.required, symbolValidator, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
+    ]],
       confirmPassword: ''
     }, {
       validators: passwordsMatchValidator

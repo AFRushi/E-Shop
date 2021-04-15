@@ -46,8 +46,16 @@
                         <input type="password" id="password" class="form-control" [ngClass]="{ 'is-invalid': registerForm.get('password').touched && registerForm.get('password').invalid }" formControlName="password" />
                         <span class="invalid-feedback">
                 <span *ngIf="registerForm.get('password').hasError('required')">Password can't be blank.</span>
-                        <span *ngIf="registerForm.get('password').hasError('symbol')">Password must contain @</span>
-                        <span *ngIf="registerForm.get('password').hasError('minlength')">Password must contain minimum 4 characters</span>
+                        <span *ngIf="registerForm.get('password').hasError('pattern')">
+                            <ul>
+                                <li>Should have an uppercase</li>
+                                <li>Should have a lowercase</li>
+                                <li>Should have a number</li>
+                                <li>Should have a special character</li>
+                                <li>minimum length is 8</li>
+                            </ul>
+                        </span>
+                         
                         </span>
                     </div>
 

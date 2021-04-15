@@ -117,18 +117,7 @@ body {
 	width: 47%;
 	text-decoration: none;
 }
-.navbar .social-btn .facebook-btn {
-	background: #507cc0;
-}
-.navbar .social-btn .facebook-btn:hover {
-	background: #4676bd;
-}
-.navbar .social-btn .twitter-btn {
-	background: #64ccf1;
-}
-.navbar .social-btn .twitter-btn:hover {
-	background: #4ec7ef;
-}
+
 .navbar .social-btn .btn i {
 	margin-right: 5px;
 	font-size: 16px;
