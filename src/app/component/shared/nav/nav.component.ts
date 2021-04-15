@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  IsApproved = true;
   constructor() { }
 
   ngOnInit(): void {

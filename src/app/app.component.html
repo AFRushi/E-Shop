@@ -1,19 +1,10 @@
 <app-header></app-header>
-<div class="conatiner">
+<div class="container">
+   
     <div class="row">
-        <div class="col">
-            <!-- for now app-nav is here -->
-            <app-nav></app-nav>
-            <router-outlet></router-outlet>
-        </div>
+        <div class="col-sm-1"><app-nav></app-nav></div>
+        <div class="col cartz"><router-outlet></router-outlet></div>
+     
+        <app-footer></app-footer>
     </div>
 </div>
-
-<div class="conatiner">
-    <div class="row">
-        <div class="col">
-            <app-footer></app-footer>
-        </div>
-    </div>
-</div>
-

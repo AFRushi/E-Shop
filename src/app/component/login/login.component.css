@@ -1,0 +1,12 @@
+.card-header
+{
+    background-color: aqua;
+}
+.btn btn-primary btn-block
+{
+    color: blue;
+}
+
+.newuser{
+    padding-top: 15px;
+}

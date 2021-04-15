@@ -28,10 +28,12 @@
                         </div>                      
                     </div>
                     <div class="login">
-                    <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Login</button>
+                    <button class="btn btn-primary btn-block"><b>Login</b></button>
                     </div>
-                    <div class="text-center">
-                        New User?<a [routerLink]="['/Register']"><u>Register Here</u></a>
+                    <div class="newuser">
+                        <div class="text-center">
+                            New User? &nbsp;<a [routerLink]="['/Register']">Register Here</a>
+                        </div>
                     </div>
                 </form>
             </div>

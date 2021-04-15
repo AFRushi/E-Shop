@@ -20,10 +20,9 @@ import { ApplyEmiComponent } from './component/shopping-main/apply-emi/apply-emi
 import { ViewDetailsComponent } from './component/shopping-main/view-details/view-details.component';
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
-
-
-
-
+import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
+import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,10 @@ import { AdminLoginComponent } from './component/login/admin-login/admin-login.c
     ApplyEmiComponent,
     ViewDetailsComponent,
     ForgotPasswordComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    EmiCardComponent,
+    OrderHistoryComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

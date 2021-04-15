@@ -1,8 +1,6 @@
-<html lang="en">
- 
-<body>
+<header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a href="#" class="navbar-brand">Company<b>Name</b></a>  		
+	<a href="#" class="navbar-brand">CompanyName<b>Name</b></a>  		
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -11,17 +9,19 @@
 		<div class="navbar-nav">
 			<a href="#" class="nav-item nav-link">Home</a>
 			<a href="#" class="nav-item nav-link">About</a>			
+			<!--
 			<div class="nav-item dropdown">
 				<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">Services</a>
 				<div class="dropdown-menu">					
-					<a href="#" class="dropdown-item">Web Design</a>
-					<a href="#" class="dropdown-item">Web Development</a>
-					<a href="#" class="dropdown-item">Graphic Design</a>
-					<a href="#" class="dropdown-item">Digital Marketing</a>
+					<a [routerLink]="['/CardDetails']" class="dropdown-item">EMI Card Details</a>
+					<a [routerLink]="['/Order-History']" class="dropdown-item">Order History</a>
+					<a href="#" class="dropdown-item">Electronics</a>
+					<a href="#" class="dropdown-item">Other Services</a>
                 </div>
             </div>
 			<a href="#" class="nav-item nav-link active">Pricing</a>
 			<a href="#" class="nav-item nav-link">Blog</a>
+			-->
 			<a href="#" class="nav-item nav-link">Contact</a>
 		</div>
 		<form class="navbar-form form-inline">
@@ -35,20 +35,20 @@
 			</div>
 		</form>
 		<div class="navbar-nav ml-auto action-buttons">
+			<!--
 			<div class="nav-item dropdown">
 				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">Login</a>
-                <div class="dropdown-menu">
-					<!--<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">Services</a>-->
-                    <a [routerLink]="['/admin-login']" class="dropdown-item">Login as Admin</a>
+				<div class="dropdown-menu">					
 					<a [routerLink]="['/Login']" class="dropdown-item">Login as User</a>
+					<a [routerLink]="['/admin-login']" class="dropdown-item">Login as Admin</a>					
                 </div>
 			</div>
+			-->
 			<div class="nav-item dropdown">
-				<a [routerLink]="['/Register']" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Sign up</a>
-                
+				<a [routerLink]="['/admin-login']" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Admin</a>
 			</div>
         </div>
 	</div>
 </nav>
-</body>
-</html>
+
+</header>
