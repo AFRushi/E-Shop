@@ -14,8 +14,8 @@ import { OrderHistoryComponent } from './component/shopping-main/order-history/o
 import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
-  //{ path : '' , component: ShoppingMainComponent },
-  { path : '', component: LandingComponent },
+  { path : '' , component: ShoppingMainComponent },
+  { path : 'landing', component: LandingComponent },
   { path : 'Login', component : LoginComponent},
   { path : 'Register' , component : RegisterComponent},
   { path : 'Cart', component : CartComponent},
