@@ -34,6 +34,7 @@ import { CheckoutComponent } from './component/shopping-main/checkout/checkout.c
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { MessengerService } from './services/messenger.service';
 
 
 
@@ -79,7 +80,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [MessengerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

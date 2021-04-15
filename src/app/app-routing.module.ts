@@ -25,7 +25,7 @@ const routes: Routes = [
   { path : 'Cart', component : CartComponent},
   { path : 'Apply', component : ApplyEmiComponent},
   { path : 'CardDetails', component : EmiCardComponent},
-  { path : 'View-Details', component : ViewDetailsComponent},
+  { path : 'View-Details/:productid', component : ViewDetailsComponent},
   { path : 'Order-History', component : OrderHistoryComponent},
   { path : 'Side-Bar', component : SideBarComponent},
   { path : 'Checkout', component : CheckoutComponent},
