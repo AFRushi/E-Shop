@@ -7,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  IsApproved = true;
+  IsApplied : any;
+  IsApproved : any
   constructor() { }
 
   ngOnInit(): void {
+    debugger
+    if(sessionStorage.length != null){
+      let data = JSON.parse(sessionStorage.getItem("user"));
+      this.IsApplied = data.applied_for_card;
+      this.IsApproved = data.approved_by_admin;
+    }
   }
 
 }

@@ -35,9 +35,8 @@ import { AboutUsComponent } from './component/shopping-main/about-us/about-us.co
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MessengerService } from './services/messenger.service';
-
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 
 
 @NgModule({
@@ -70,7 +69,8 @@ import { MessengerService } from './services/messenger.service';
     ImageSliderComponent,
     SideBarComponent,
     CheckoutComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +78,7 @@ import { MessengerService } from './services/messenger.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [MessengerService],

@@ -36,13 +36,19 @@ export class ViewDetailsComponent implements  OnInit {
     async getProductDetails(){
       
       console.log(this.router.snapshot.params['productid']);
-     let result = await this.productService.getProductById(this.router.snapshot.params['productid']).subscribe((data) =>{
+     var result = false;
+      await this.productService.getProductById(this.router.snapshot.params['productid']).subscribe((data) =>{
       this.productItem = data;
         console.log(data);
-        return true;
+        this.imageUrl = "../../../../assets/"+ this.productItem.product_image;
+        console.log(this.imageUrl)
       });
-      this.imageUrl = "../../../../assets/"+ this.productItem.product_image;
-      console.log(this.imageUrl)
+      
+      // if(result){
+      //   this.imageUrl = "../../../../assets/"+ this.productItem.product_image;
+      //   console.log(this.imageUrl)
+      // }
+     
     }
   // ngOnInit(): void {
 

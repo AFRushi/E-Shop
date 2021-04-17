@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user/user';
+import { Login } from 'src/app/models/user/login';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,13 @@ export class AdminUsersService {
 
   deleteUser(id): Observable<User>{
     return this.httpClient.delete<User>(this.apiServer + 'Admin/DeleteUser?=' + id);
+  }
+
+  getLogin(login) : Observable<Login> {
+    return this.httpClient.post<User>(this.apiServer+"User/UserLogin/",JSON.stringify(login),this.httpOptions );
+  }
+
+  createUser(user : User) : Observable<User> {
+    return this.httpClient.post<User>(this.apiServer + "User/CreateUser",JSON.stringify(user),this.httpOptions);
   }
 }

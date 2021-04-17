@@ -82,6 +82,10 @@ emiCard : any [] = [];
   }
   onDelete(){
     // Servicecode
+    this.service.deleteUser(this.approveId).subscribe(res =>{
+      this.refreshUserList();
+      this.toastr.info("User Deleted");
+    })
   }
 
   openCardDetails(targetModal,user){
@@ -128,7 +132,7 @@ emiCard : any [] = [];
  EditSubmit(userData){
   console.log(userData.value);
     if (confirm('Are you sure to Update this record ?') == true) {
-      userData.value.applied_for_card = 
+      // userData.value.applied_for_card = true
       this.service.upDateUserDetail(userData.value.user_id,userData.value)
       .subscribe(x => {
         this.refreshUserList();

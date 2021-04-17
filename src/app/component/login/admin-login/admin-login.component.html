@@ -22,19 +22,19 @@
 
                     <div class="form-group">
                         <input type="checkbox" id="remember" name="remember" #remember="ngModel" [(ngModel)]="model.remember">
-                        <label class="ml-1" for="remember">Remember Me</label>
-                        <div class="forgotpass text-right">
+                        <!-- <label class="ml-1" for="remember">Remember Me</label> -->
+                        <!-- <div class="forgotpass text-right">
                             <a [routerLink]="['/forgot-password']"><u>Forgot password?</u></a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="login">
-                        <button class="btn btn-primary btn-block" [disabled]="!loginForm.valid"><b>Login</b></button>
+                        <button class="btn btn-primary btn-block"><b>Login</b></button>
                     </div>
-                    <div class="newuser">
+                    <!-- <div class="newuser">
                         <div class="text-center">
                             New User? &nbsp;<a [routerLink]="['/Register']">Register Here</a>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>

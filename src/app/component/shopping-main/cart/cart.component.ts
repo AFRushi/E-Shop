@@ -26,7 +26,12 @@ export class CartComponent implements OnInit {
     //   console.log(product)
     //   this.addProductToCart(product);
     // })
+    // this.refreshCart();
   }
+
+  // refreshCart (){
+
+  // }
   // addProductToCart(product: Product) {
 
   //   let productExists = false
