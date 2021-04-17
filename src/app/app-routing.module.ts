@@ -17,15 +17,17 @@ import { AdminComponentComponent } from './component/adminComponent/admin-compon
 import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
 import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
+import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
+  { path : 'Shopping' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
   { path : 'Register' , component : RegisterComponent},
   { path : 'Cart', component : CartComponent},
   { path : 'Apply', component : ApplyEmiComponent},
   { path : 'CardDetails', component : EmiCardComponent},
-  { path : 'View-Details', component : ViewDetailsComponent},
+  { path : 'View-Details/:productid', component : ViewDetailsComponent},
   { path : 'Order-History', component : OrderHistoryComponent},
   { path : 'Side-Bar', component : SideBarComponent},
   { path : 'Checkout', component : CheckoutComponent},
@@ -35,6 +37,7 @@ const routes: Routes = [
   { path : 'approvedUsers', component:ApprovedUsersComponent},
   { path : 'allProducts', component: AllProductsComponent},
   {path : 'adminComponent',component: AdminComponentComponent},
+  { path : 'AdminLogin', component :AdminLoginComponent},
   { path : '**', component : PageNoFoundComponent}
   
 ];

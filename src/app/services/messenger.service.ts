@@ -9,12 +9,12 @@ export class MessengerService {
 
   constructor() { }
 
-  senMsg(product){
+  sentProduct(product){
     // console.log(product);
     this.subject.next(product);
   }
 
-  getMsg(){
-    return this.subject.asObservable()
+  getProduct(){
+    return this.subject.asObservable();
   }
 }

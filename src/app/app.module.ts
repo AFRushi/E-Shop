@@ -32,9 +32,11 @@ import { ImageSliderComponent } from './component/shopping-main/image-slider/ima
 import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
 import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { MessengerService } from './services/messenger.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 
 
 @NgModule({
@@ -67,15 +69,19 @@ import { AboutUsComponent } from './component/shopping-main/about-us/about-us.co
     ImageSliderComponent,
     SideBarComponent,
     CheckoutComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [MessengerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

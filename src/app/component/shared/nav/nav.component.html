@@ -5,20 +5,22 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" [routerLink]="['/Side-Bar']">Menu</a>
+                    <a class="nav-link" [routerLink]="['/Side-Bar']"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <div *ngIf="!IsApproved">
+                <div *ngIf="!IsApplied">
                     <li class="nav-item">
                         <a [routerLink]="['/Apply']" class="nav-link">Apply EMI Card</a>
                     </li>
                 </div>
-                <div *ngIf="IsApproved">
+                <div *ngIf="IsApplied">
                     <li class="nav-item">
                         <a [routerLink]="['/CardDetails']" class="nav-link">EMI Card Details</a>
                     </li>
@@ -44,7 +46,7 @@
                 <li class="nav-item">
                     <a [routerLink]="['/About-Us']" class="nav-link">About Us</a>
                 </li>
-                
+
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> More</a>
                     <div class="dropdown-menu">

@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="guest-form-card card">
+
+            <div class="card-header text-center">
+                <h2>User Login</h2>
+            </div>
+
+            <div class="card-body">
+                <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" class="form-control" [ngClass]="{ 'is-invalid': username.touched && username.invalid }" name="username" #username="ngModel" [(ngModel)]="model.username" required />
+                        <span class="invalid-feedback">Username can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" [ngClass]="{ 'is-invalid': password.touched && password.invalid }" #password="ngModel" [(ngModel)]="model.password" required />
+                        <span class="invalid-feedback">Password can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="remember" name="remember" #remember="ngModel" [(ngModel)]="model.remember">
+                        <!-- <label class="ml-1" for="remember">Remember Me</label> -->
+                        <!-- <div class="forgotpass text-right">
+                            <a [routerLink]="['/forgot-password']"><u>Forgot password?</u></a>
+                        </div> -->
+                    </div>
+                    <div class="login">
+                        <button class="btn btn-primary btn-block"><b>Login</b></button>
+                    </div>
+                    <!-- <div class="newuser">
+                        <div class="text-center">
+                            New User? &nbsp;<a [routerLink]="['/Register']">Register Here</a>
+                        </div>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
