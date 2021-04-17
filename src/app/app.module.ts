@@ -23,6 +23,8 @@ import { AdminLoginComponent } from './component/login/admin-login/admin-login.c
 import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
 import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.component';
 import { LandingComponent } from './landing/landing.component';
+import { LandHeaderComponent } from './landing/land-header/land-header.component';
+import { SidenavComponent } from './component/shared/nav/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { LandingComponent } from './landing/landing.component';
     AdminLoginComponent,
     EmiCardComponent,
     OrderHistoryComponent,
-    LandingComponent
+    LandingComponent,
+    LandHeaderComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

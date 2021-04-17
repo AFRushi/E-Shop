@@ -12,10 +12,11 @@ import { ForgotPasswordComponent } from './component/login/forgot-password/forgo
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
 import { LandingComponent } from './landing/landing.component';
+import { SidenavComponent } from './component/shared/nav/sidenav/sidenav.component';
 
 const routes: Routes = [
-  { path : 'shopping-main' , component: ShoppingMainComponent },
-  { path : '', component: LandingComponent },
+  { path : '' , component: ShoppingMainComponent },
+  { path : 'landing', component: LandingComponent },
   { path : 'Login', component : LoginComponent},
   { path : 'Register' , component : RegisterComponent},
   { path : 'Cart', component : CartComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : 'admin-login' ,component:AdminLoginComponent},
   { path : 'emi-card' ,component:EmiCardComponent },
+  { path : 'sidenav ', component : SidenavComponent},
   { path : '**', component : PageNoFoundComponent}
   
 ];
