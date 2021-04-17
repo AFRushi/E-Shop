@@ -25,6 +25,22 @@ import { EmiCardComponent } from './component/shopping-main/emi-card/emi-card.co
 import { LandingComponent } from './landing/landing.component';
 import { LandHeaderComponent } from './landing/land-header/land-header.component';
 import { SidenavComponent } from './component/shared/nav/sidenav/sidenav.component';
+import { AdminComponentComponent } from './component/adminComponent/admin-component.component';
+import { AppliedForCardComponent } from './component/adminComponent/user/applied-for-card/applied-for-card.component';
+import { ApprovedUsersComponent } from './component/adminComponent/user/approved-users/approved-users.component';
+import { AdminHeaderComponent } from './component/adminComponent/adminShared/admin-header/admin-header.component';
+import { AdminSidebarComponent } from './component/adminComponent/adminShared/admin-sidebar/admin-sidebar.component';
+import { AllProductsComponent } from './component/adminComponent/user/all-products/all-products.component';
+import { ImageSliderComponent } from './component/shopping-main/image-slider/image-slider.component';
+import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
+import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
+import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { MessengerService } from './services/messenger.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -49,15 +65,29 @@ import { SidenavComponent } from './component/shared/nav/sidenav/sidenav.compone
     OrderHistoryComponent,
     LandingComponent,
     LandHeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    AdminComponentComponent,
+    AppliedForCardComponent,
+    ApprovedUsersComponent,
+    AdminHeaderComponent,
+    AdminSidebarComponent,
+    AllProductsComponent,    
+    ImageSliderComponent,
+    SideBarComponent,
+    CheckoutComponent,
+    AboutUsComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [MessengerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

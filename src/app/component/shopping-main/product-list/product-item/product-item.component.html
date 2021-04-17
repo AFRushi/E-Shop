@@ -1,19 +1,20 @@
 <!-- <p>product-item works!</p> -->
-<div class="card shadow-sm">
-    <img class="bd-placeholder-img card-img-top" width="100%" [src]="productItem.imageUrl" />
+<div class="card shadow-sm" style="width: 18rem;">
+    <img class="bd-placeholder-img card-img-top" width="100%" height="50%" [src]="imageUrl" />
 
     <div class="card-body">
-        <h5 class="card-title">{{productItem.name}}</h5>
+        <h5 class="card-title">{{productItem.product_name}}</h5>
         <p class=" text-right ">
-            <strong>{{productItem.price | currency: 'INR'}}</strong>
+            <strong>{{productItem.product_price | currency: 'INR'}}</strong>
         </p>
-        <p class="card-text">{{productItem.description}}</p>
+        <p class="card-text">{{productItem.product_small_descripton}}</p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-primary pull-right product-btn 
                 " (click)="handleAddToCart()">
                 Add To Cart</button>
-                <button type="button" [routerLink]="['/View-Details']" class="btn btn-sm btn-outline-secondary  product-btn ">View Details</button>
+                <!-- [routerLink]="['/View-Details']"  -->
+                <button type="button" [routerLink]="['/View-Details',productItem.product_id]" class="btn btn-sm btn-outline-secondary  product-btn ">View Details</button>
             </div>
             <small class="text-muted"></small>
         </div>

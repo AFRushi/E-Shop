@@ -11,23 +11,37 @@ import { ViewDetailsComponent } from './component/shopping-main/view-details/vie
 import { ForgotPasswordComponent } from './component/login/forgot-password/forgot-password.component';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 import { OrderHistoryComponent } from './component/shopping-main/order-history/order-history.component';
-import { LandingComponent } from './landing/landing.component';
+import { AppliedForCardComponent } from './component/adminComponent/user/applied-for-card/applied-for-card.component';
+import { ApprovedUsersComponent } from './component/adminComponent/user/approved-users/approved-users.component';
+import { AllProductsComponent } from './component/adminComponent/user/all-products/all-products.component';
+import { AdminComponentComponent } from './component/adminComponent/admin-component.component';
+import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
+import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
+import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 import { SidenavComponent } from './component/shared/nav/sidenav/sidenav.component';
 
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
-  { path : 'landing', component: LandingComponent },
+  { path : 'Shopping' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
   { path : 'Register' , component : RegisterComponent},
   { path : 'Cart', component : CartComponent},
   { path : 'Apply', component : ApplyEmiComponent},
   { path : 'CardDetails', component : EmiCardComponent},
-  { path : 'View-Details', component : ViewDetailsComponent},
+  { path : 'View-Details/:productid', component : ViewDetailsComponent},
   { path : 'Order-History', component : OrderHistoryComponent},
+  { path : 'Side-Bar', component : SideBarComponent},
+  { path : 'Checkout', component : CheckoutComponent},
+  { path : 'About-Us', component : AboutUsComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : 'admin-login' ,component:AdminLoginComponent},
   { path : 'emi-card' ,component:EmiCardComponent },
   { path : 'sidenav ', component : SidenavComponent},
+  { path : 'appliedUsers', component:AppliedForCardComponent},
+  { path : 'approvedUsers', component:ApprovedUsersComponent},
+  { path : 'allProducts', component: AllProductsComponent},
+  {path : 'adminComponent',component: AdminComponentComponent},
+  { path : 'AdminLogin', component :AdminLoginComponent},
   { path : '**', component : PageNoFoundComponent}
   
 ];
