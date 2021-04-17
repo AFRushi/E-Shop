@@ -32,6 +32,7 @@ import { ImageSliderComponent } from './component/shopping-main/image-slider/ima
 import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
 import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
+import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 
 
 
@@ -67,7 +68,8 @@ import { AboutUsComponent } from './component/shopping-main/about-us/about-us.co
     ImageSliderComponent,
     SideBarComponent,
     CheckoutComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    PayEmiHereComponent
   ],
   imports: [
     BrowserModule,

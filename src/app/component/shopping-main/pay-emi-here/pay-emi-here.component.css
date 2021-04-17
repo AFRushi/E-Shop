@@ -19,13 +19,6 @@ body {
 	
 }
 
-.table-striped{
-    background-color: #d6c6b0;
-    opacity: 0.95;
-}
-.table-striped1{
-    background-color: #fdf7ef;
-}
 .table-wrapper .btn:hover {
 	color: #333;
 	background: #f2f2f2;
@@ -211,3 +204,13 @@ table.table .avatar {
 	margin-top: 10px;
 	font-size: 13px;
 }   
+.btn{
+    align-content: center;
+}
+.table-striped{
+    background-color: #d6c6b0;
+    opacity: 0.85;
+}
+.table-striped1{
+    background-color: #fdf7ef;
+}

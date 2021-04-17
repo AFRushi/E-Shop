@@ -18,53 +18,59 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-4">
-                            <h2><b style="color: #d6c6b0;" >Order History</b></h2>
+                            <h2><b style="color: #d6c6b0;" >EMI Payment</b></h2>
                         </div>
                         
                     </div>
                 </div>              
-               <table class="table table-striped table-hover">
-                    <thead>
-                        
-                            <th>Sno.</th>
+               <table class="table table-hover">
+                    <thead>   
+                           
+                            <th>S.no</th>
                             <th>Product Name</th>                            
                             <th>Order Date</th>						
-                            <th>Status</th>		                            				
-                            <th>Net Amount</th> 
-                            <th>View Details</th>                           
+                            <th>Price</th>	
+                            <th>EMI / Month</th>	                            				
+                            <th>Next Due</th> 
+                            <th>Pay Now</th>                           
                         
                     </thead>
-                    <tbody>
+                    <tbody >
                         <tr class="table-striped">
                             <td>1</td>                     
                             <td>Phone</td>
-                            <td>Jun 15, 2017</td>                        
-                            <td><span class="status text-success">&bull;</span> Delivered</td>
+                            <td>Jun 15, 2017</td>                    
                             <td>&#8377;25,400</td>
-                            <td><a href="#" class="view" style="color: #d6c6b0;" title="View Details" data-toggle="tooltip" [routerLink]="['/View-Details']"><i class="material-icons">&#xE5C8;</i></a></td>
+                            <td> </td>
+                            <td> </td>
+                            <button [routerLink]="['/']"  class="btn btn btn-success" >Pay Now</button>
                         </tr>
                         <tr class="table-striped1">
                             <td>2</td>                     
                             <td>Refrigerator</td>                                                  
                             <td>Jun 21, 2018</td>
-                            <td><span class="status text-info">&bull;</span> Shipped</td>
                             <td>&#8377;62,600</td>
-                            <td><a href="#" class="view" style="color: #d6c6b0;" title="View Details" data-toggle="tooltip" [routerLink]="['/View-Details']"><i class="material-icons">&#xE5C8;</i></a></td>
+                            <td> </td>
+                            <td> </td>
+                            <button [routerLink]="['/']"  class="btn btn btn-success"  >Pay Now</button>
+                            
                         </tr>
                         <tr class="table-striped">
                             <td>3</td>                     
                             <td>Furniture</td>                            
                             <td>Jul 04, 2019</td>
-                            <td><span class="status text-danger">&bull;</span> Cancelled</td>
                             <td>&#8377;3,500</td>
-                            <td><a href="#" class="view" style="color: #d6c6b0;" title="View Details" data-toggle="tooltip" [routerLink]="['/View-Details']"><i class="material-icons">&#xE5C8;</i></a></td>
+                            <td> </td>
+                            <td> </td>
+                            <button [routerLink]="['/']"  class="btn btn btn-success"  >Pay Now</button>
                         </tr>                       
                         
                     </tbody>
                 </table>
-                
             </div>
         </div>        
     </div>     
-    </body>
-    </html>
+
+    
+ </body>
+</html>

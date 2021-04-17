@@ -17,6 +17,7 @@ import { AdminComponentComponent } from './component/adminComponent/admin-compon
 import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.component';
 import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
+import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path : 'Side-Bar', component : SideBarComponent},
   { path : 'Checkout', component : CheckoutComponent},
   { path : 'About-Us', component : AboutUsComponent},
+  { path : 'Pay-Emi-Here', component : PayEmiHereComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : 'appliedUsers', component:AppliedForCardComponent},
   { path : 'approvedUsers', component:ApprovedUsersComponent},

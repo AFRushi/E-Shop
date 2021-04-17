@@ -153,11 +153,7 @@
     margin-top: 4px;
   }
   
-  .sidebar-wrapper .sidebar-header .user-info .user-status i {
-    font-size: 8px;
-    margin-right: 4px;
-    color: #5cb85c;
-  }
+  
   
   
   /*----------------------sidebar-menu-------------------------*/
@@ -253,13 +249,15 @@
   /*-----------------------------chiller-theme-------------------------------------------------*/
   
   .chiller-theme .sidebar-wrapper {
-      background: #31353D;
+      background: #d6c6b0;
+      opacity: 0.95;
   }
   
   .chiller-theme .sidebar-wrapper .sidebar-header,
   .chiller-theme .sidebar-wrapper .sidebar-search,
   .chiller-theme .sidebar-wrapper .sidebar-menu {
-      border-top: 1px solid #3a3f48;
+      border-top: 1px solid #d6c6b0;
+      opacity: 0.95;
   }
   
   .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
@@ -275,7 +273,7 @@
   .chiller-theme .sidebar-wrapper .sidebar-brand>a,
   .chiller-theme .sidebar-wrapper .sidebar-menu ul li a,
   .chiller-theme .sidebar-footer>a {
-      color: #818896;
+      color: black;
   }
   
   .chiller-theme .sidebar-wrapper .sidebar-menu ul li:hover>a,
@@ -283,11 +281,11 @@
   .chiller-theme .sidebar-wrapper .sidebar-header .user-info,
   .chiller-theme .sidebar-wrapper .sidebar-brand>a:hover,
   .chiller-theme .sidebar-footer>a:hover i {
-      color: #b8bfce;
+      color: black;
   }
   
   .page-wrapper.chiller-theme.toggled #close-sidebar {
-      color: #bdbdbd;
+      color: black;
   }
   
   .page-wrapper.chiller-theme.toggled #close-sidebar:hover {

@@ -1,0 +1,28 @@
+.card-row {
+    display: flex;
+    justify-content: 20px;
+  }
+
+  .card {
+    width: 320px;
+    padding: 10px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    
+  }
+  .btn {    
+    text-decoration: none;
+    border-color: #0c2949;
+    background-color: #0c2949;
+    color: #fff; /* white */    
+    border-radius: 4px;
+  }
+  .btn1 {    
+    text-decoration: none;
+    background-color: #d6c6b0;
+    border-color: #d6c6b0;
+    color: rgb(19, 16, 16);     
+    border-radius: 4px;
+  }

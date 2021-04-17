@@ -1,22 +1,21 @@
 <div *ngIf="!isAdmin">
     <app-header></app-header>
-    <div class="container">
+    
         <div class="row">
-            <div class="col">
-                <!-- for now app-nav is here -->
+            <div class="col">                
                 <app-nav></app-nav>
                 <router-outlet></router-outlet>
             </div>
         </div>
-    </div>
+    
 
-    <div class="container">
+    
         <div class="row">
             <div class="col">
                 <app-footer></app-footer>
             </div>
         </div>
-    </div>
+    
 </div>
 
 <div *ngIf="isAdmin">

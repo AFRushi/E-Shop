@@ -1,8 +1,9 @@
 .card-header
 {
-    background-color: aqua;
+    background-color: #0c2949;
+    opacity: 0.8;
 }
-.btn btn-primary btn-block
+.btn 
 {
-    color: blue;
+    background-color: #d6c6b0;
 }
