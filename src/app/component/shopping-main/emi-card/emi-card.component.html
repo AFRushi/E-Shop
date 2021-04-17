@@ -2,30 +2,28 @@
 
 <div class="emi">
       <h2>EMI Card Details</h2>
-    </div>
-      <p>EMI Card Number  12345678910</p>
-  
-       <table>
-         <tr>
-            <th style="padding-right: 5px;"><b>EMI-Card Id</b></th>
-            <td>12345</td><br>
-            <th style="padding-left: 10px;"><b>CardType</b></th>
-            <td style="padding-left: 20px;">Gold</td>
-             <th style="padding-left: 20px;"><b>ValidTill</b></th>
-             <td style="padding-left: 20px;">20/11/2022</td>
-          </tr>
-        </table><br>
-        <table>
-          <tr>
-            <th style="padding-right: 10px;"><b>Card Status</b></th>
-            <td>Activated</td><br>
-            <th style="padding-left:10px">Limit</th>
-            <td style="padding-left: 10px;">50000</td>
-            <th style="padding-left: 20px;">Balance</th>
-            <td style="padding-left: 20px;">30000</td>
-          </tr>
-
-       
-</table>
-
 </div>
+<form [formGroup]="emicardForm">
+  <p>
+     <label for="cardnumber"><b>EMI Card Number</b></label><br>
+     <input type="text" id="cardnumber" name="cardnumber" formControlName="cardnumber">
+  </p>
+  <p>
+    <label for="cardtype">CardType</label><br>
+    <input type="text" id="cardtype" name="cardtype" formControlName="cardtype">
+ </p>
+  <p>
+     <label for="validtill">ValidTill</label><br>
+     <input type="text" id="validtill" name="validtill"formControlName="validtill" placeholder="MM/YY"><br>
+  </p>
+  <p>
+     <label for="limit">Limit</label><br>
+     <input type="text" id="limit" name="limit" formControlName="limit">
+  </p>
+  <p>
+    <label for="balance">Balance</label><br>
+    <input type="text" id="balance" name="balance" formControlName="balance">
+  </p>
+</form>
+</div>
+

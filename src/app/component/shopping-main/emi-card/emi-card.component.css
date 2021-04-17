@@ -2,15 +2,19 @@
   
   margin-top: 6px;
   margin-bottom: 10px;
+ text-align: center;
+}
 
-}
-style{
-  color: blue;
-}
 .emi{
   color:black;
   background-color: aqua;
   margin-top: 20px;
   margin-bottom: 20px;
 
+}
+input[type=text]{
+width: 250px;
+height: 40px;
+display: inline-block;
+margin: 5px 0 2px 0;
 }
