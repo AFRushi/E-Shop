@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Banks } from 'src/app/models/user/banks';
 import { Branches } from 'src/app/models/user/branches';
+import { CardDetail } from 'src/app/models/user/card-detail';
 import { Login } from 'src/app/models/user/login';
 
 
@@ -40,5 +41,9 @@ export class UserServiceService {
 
   saveApplyEmiCard(data) : Observable<any>{
     return this.httpClient.post<any>(this.apiServer+"EMICard/CreateEmiCardForUser/",JSON.stringify(data),this.httpOptions);
+  }
+
+  getEmiDetails(id) : Observable<CardDetail>{
+    return this.httpClient.get<CardDetail>(this.apiServer + "EMICard/GetCardDetails?id=" + id);
   }
 }

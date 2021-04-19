@@ -32,7 +32,7 @@ export class ApplyEmiComponent implements OnInit {
    branches : Branches[]=[];
   ifscSelect : string;
   cardTypeSelected : any;
-  constructor(private service : UserServiceService,private route : Router) { }
+  constructor(private service : UserServiceService,private router : Router) { }
   get userid() {
     return this.applyemiForm.get('userid');
   } 
@@ -67,6 +67,8 @@ export class ApplyEmiComponent implements OnInit {
       this.Name = this.user.username;
       console.log(this.Name);
       this.FillBanks();
+    }else{
+      this.router.navigateByUrl("/Login");
     }
 
     
@@ -116,7 +118,7 @@ onSubmit() {
    if(data == "Success"){
 
     alert("Applied Sucessfully");
-    this.route.navigateByUrl("/Shopping");
+    this.router.navigateByUrl("/Shopping");
 
    }else if(data == "AlreadyExist"){
     alert("Applied Card already Exist");

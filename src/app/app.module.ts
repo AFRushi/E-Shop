@@ -37,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MessengerService } from './services/messenger.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
+import { LandingComponent } from './landing/landing.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { AdminLoginComponent } from './component/login/admin-login/admin-login.c
     SideBarComponent,
     CheckoutComponent,
     AboutUsComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
