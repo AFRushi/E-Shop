@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AdminHeaderComponent implements OnInit {
 
   role;
-  isDashBoard = false;
+  isDashBoard=false;
   adminObj;
   userObj;
   constructor(private router : Router) { }
@@ -19,22 +19,40 @@ export class AdminHeaderComponent implements OnInit {
     if(sessionStorage.length == 0){
       this.isDashBoard = true;
     }else if( sessionStorage.length > 0 && sessionStorage.getItem('role') == "admin"){
-
+      this.isDashBoard = false;
       this.role = "admin";
-      this.adminObj = JSON.parse(sessionStorage.get('Admindata'));
-      
+      this.adminObj = JSON.parse(sessionStorage.getItem('Admindata'));
+      console.log("role :",this.role);
+      console.log("Admin :",this.adminObj);
     }else if(sessionStorage.length > 0 && sessionStorage.getItem('role') == "user"){
-
+      this.isDashBoard = false;
+      this.role = "user";
+      this.userObj = JSON.parse(sessionStorage.getItem("user"));
+      console.log("role :",this.role);
     }
   }
 
 
-  logout(){
+  Adminlogout(){
     
-    sessionStorage.removeItem('admin');
-    sessionStorage.removeItem('isAdmin');
+    sessionStorage.removeItem('role');
+    sessionStorage.removeItem('Admindata');
     sessionStorage.clear();
+    this.isDashBoard = true;
+    // window.location.reload();
+    this.router.navigateByUrl('');
+    window.location.reload();
+
+  }
+  Userlogout(){
     
-    this.router.navigateByUrl('/AdminLogin');
+    sessionStorage.removeItem('role');
+    sessionStorage.removeItem('userObj');
+    sessionStorage.clear();
+    this.isDashBoard = true;
+    window.location.reload();
+    this.router.navigateByUrl('');
+    
+
   }
 }

@@ -19,11 +19,11 @@ import { CheckoutComponent } from './component/shopping-main/checkout/checkout.c
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 import { BodyContentComponent } from './landing/body-content/body-content.component';
-import { componentFactoryName } from '@angular/compiler';
+
 import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 
 const routes: Routes = [
-  // { path : '' , component: ShoppingMainComponent },
+  { path : '' , component: BodyContentComponent },
   { path : 'Shopping' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
   { path : 'Register' , component : RegisterComponent},

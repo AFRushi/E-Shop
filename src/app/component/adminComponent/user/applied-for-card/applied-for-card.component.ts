@@ -3,6 +3,7 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/models/user/user';
 import { AdminUsersService } from 'src/app/services/Admin/admin-users.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-applied-for-card',
   templateUrl: './applied-for-card.component.html',
@@ -23,11 +24,30 @@ export class AppliedForCardComponent implements OnInit {
   cardD : any;
   headElements = ['User ID','Name','Email','Phone Number','Card Data','Action'];
   
-
-  constructor(private modalService: NgbModal, private service : AdminUsersService,private toastr: ToastrService) { }
+  isDashBoard =false;
+  role;
+  adminObj;
+  constructor(private modalService: NgbModal,
+     private service : AdminUsersService,private toastr: ToastrService,private router : Router) { }
 
   ngOnInit(): void {
-    this.refreshUserList();
+    debugger
+    if(sessionStorage.length == 0){
+      this.isDashBoard =true;
+      this.router.navigateByUrl("");
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem('role') == "admin"){
+
+      this.isDashBoard = false;
+      this.role = "admin";
+      this.adminObj = JSON.parse(sessionStorage.getItem('Admindata'));
+      console.log("role :",this.role);
+
+      this.refreshUserList();
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem("role") == "user"){
+      this.isDashBoard = false;
+      this.router.navigateByUrl("/AdminLogin");
+    }
+    
   }
 
   refreshUserList(){

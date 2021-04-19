@@ -21,7 +21,7 @@ export class ViewDetailsComponent implements  OnInit {
   productItem;
   imageUrl : any ;
   user :any
-  disableBuy= false;
+  disableBuy=false;
   constructor(
     private productService: ProductService,
     private service : UserServiceService,private router:ActivatedRoute,private router1 : Router) { }

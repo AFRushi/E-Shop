@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { sequenceEqual } from 'rxjs/operators';
 import { Product } from 'src/app/models/user/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -19,10 +21,29 @@ export class AllProductsComponent implements OnInit {
   
   products :Product[];
   ImageUrls : string[];
-  constructor(private service : ProductService, private modalService : NgbModal) { }
+  isDashBoard =false;
+  role;
+  adminObj
+  constructor(private service : ProductService, private modalService : NgbModal,private router : Router) { }
 
   ngOnInit(): void {
-    this.refreshList();
+
+    if(sessionStorage.length == 0){
+      this.isDashBoard =true;
+      this.router.navigateByUrl("");
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem('role') == "admin"){
+
+      this.isDashBoard = false;
+      this.role = "admin";
+      this.adminObj = JSON.parse(sessionStorage.getItem('Admindata'));
+      console.log("role :",this.role);
+
+      this.refreshList();
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem("role") == "user"){
+      this.isDashBoard = false;
+      this.router.navigateByUrl("/AdminLogin");
+    }
+    
   }
 
   refreshList(){

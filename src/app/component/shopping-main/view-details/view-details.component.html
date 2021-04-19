@@ -79,9 +79,9 @@
                             <!-- price-detail-wrap .// -->
 
                             <div class="mb-4">
-                                <div *ngIf="disableBuy"><a routerLink="/Checkout" class="btn btn-primary mr-1" aria-disabled="true">Buy now</a></div>
-                                <div *ngIf="!disableBuy"><a routerLink="/Checkout" class="btn btn-primary mr-1">Buy now</a></div>
-                                <a (click)="handleAddToCart()" class="btn btn-light">Add to cart</a>
+                                <div *ngIf="!disableBuy"><a [routerLink]="['/Checkout',productItem.product_id]" class="btn btn-primary mr-1" aria-disabled="true">Buy now</a></div>
+                                <div *ngIf="disableBuy"><a [routerLink]="['/Checkout',productItem.product_id]" class="btn btn-primary mr-1">Buy now</a></div>
+                                <div><a (click)="handleAddToCart()" class="btn btn-light">Add to cart</a></div>
                             </div>
 
                         </article>

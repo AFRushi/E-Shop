@@ -26,9 +26,13 @@ export class AdminLoginComponent implements OnInit {
       }else{
        console.log(JSON.stringify(data));
        sessionStorage.setItem("role","admin");
-        sessionStorage.setItem("admin",JSON.stringify(data));
-        sessionStorage.setItem("Admindata","true");
-        this.router.navigateByUrl("/adminComponent");
+       
+        sessionStorage.setItem("Admindata",JSON.stringify(data));
+        // sessionStorage.setItem("Admindata","true");
+        window.location.reload();
+        this.router.navigateByUrl("");
+       
+        
       }
     })
   }
