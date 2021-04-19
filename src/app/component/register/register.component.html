@@ -18,7 +18,7 @@
                         <label for="email">Email</label>
                         <input type="email" id="email" class="form-control" [ngClass]="{ 'is-invalid': registerForm.get('email').touched && registerForm.get('email').invalid }" formControlName="email" />
                         <span class="invalid-feedback">
-                <span *ngIf="registerForm.get('email').hasError('required')">Email can't be blank.</span>
+                        <span *ngIf="registerForm.get('email').hasError('required')">Email can't be blank.</span>
                         <span *ngIf="registerForm.get('email').hasError('email')">Email must be valid.</span>
                         </span>
                     </div>
@@ -26,7 +26,10 @@
                     <div class="form-group">
                         <label for="mobile">Mobile Number</label>
                         <input id="mobile" class="form-control" [ngClass]="{ 'is-invalid': registerForm.get('mobile').touched && registerForm.get('mobile').invalid }"formControlName="mobile"/>
-                        <span class="invalid-feedback">Mobile Number can't be blank.</span>
+                        <span class="invalid-feedback">
+                        <span *ngIF="registerForm.get('mobile').hasError('required')">Mobile Number can't be blank.</span>
+                        <span *ngIf="registerForm.get('mobile').hasError('pattern')">Mobile number must be valid.</span>
+                        </span>
                     </div>
 
                     <div class="form-group">
@@ -45,7 +48,7 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" class="form-control" [ngClass]="{ 'is-invalid': registerForm.get('password').touched && registerForm.get('password').invalid }" formControlName="password" />
                         <span class="invalid-feedback">
-                <span *ngIf="registerForm.get('password').hasError('required')">Password can't be blank.</span>
+                        <span *ngIf="registerForm.get('password').hasError('required')">Password can't be blank.</span>
                         <span *ngIf="registerForm.get('password').hasError('pattern')">
                             <ul>
                                 <li>Should have an uppercase</li>

@@ -39,11 +39,10 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.builder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      mobile:['',Validators.required],
+      mobile:['',Validators.required,Validators.pattern('[7-9]{1}[0-9]{9}')],
       username: ['', Validators.required],
       address: ['', Validators.required],
-      password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
-    ]],
+      password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
       confirmPassword: ''
     }, {
       validators: passwordsMatchValidator

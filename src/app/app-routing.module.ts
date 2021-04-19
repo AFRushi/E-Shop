@@ -19,6 +19,7 @@ import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.compo
 import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 import { SidenavComponent } from './component/shared/nav/sidenav/sidenav.component';
+import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path : '' , component: ShoppingMainComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path : 'Checkout', component : CheckoutComponent},
   { path : 'About-Us', component : AboutUsComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
+  { path : 'reset-password' ,component:ResetPasswordComponent },
   { path : 'admin-login' ,component:AdminLoginComponent},
   { path : 'emi-card' ,component:EmiCardComponent },
   { path : 'sidenav ', component : SidenavComponent},

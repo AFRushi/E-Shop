@@ -39,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MessengerService } from './services/messenger.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
 
 
 
@@ -76,7 +77,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SideBarComponent,
     CheckoutComponent,
     AboutUsComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
