@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     debugger
-    if(sessionStorage.length != null){
+    if(sessionStorage.length > 0){
       let data = JSON.parse(sessionStorage.getItem("user"));
       this.IsApplied = data.applied_for_card;
       this.IsApproved = data.approved_by_admin;

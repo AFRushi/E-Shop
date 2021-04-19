@@ -17,15 +17,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginForm : NgForm) {
+    
     // console.log(loginForm.value);
     this.service.getLogin(loginForm.value).subscribe(data =>{
       if(data == "Invalid" ){
         this.toastr.warning("Invalid Username Or Password");
+        alert("Invalid Username Or password");
       }else{
        console.log(JSON.stringify(data));
         sessionStorage.setItem("user",JSON.stringify(data));
         
         this.router.navigateByUrl("/Shopping");
+        
       }
     })
 

@@ -10,6 +10,7 @@ export class ShoppingMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

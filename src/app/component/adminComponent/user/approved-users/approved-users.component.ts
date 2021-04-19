@@ -22,7 +22,8 @@ export class ApprovedUsersComponent implements OnInit {
   // ];
 elements : User [] =[];
 emiCard : any [] = [];
-  headElements = ['User ID','Name','Email','Phone Number','Address','Card Details','Edit','Action'];
+cardD :any;
+  headElements = ['User ID','Name','Email','Phone Number','Card Details','Edit','Action'];
 
   constructor(private modalService: NgbModal, private service : AdminUsersService,private toastr: ToastrService,
     private fb: FormBuilder) {
@@ -48,6 +49,25 @@ emiCard : any [] = [];
       this.elements = data;
       console.log(data);
     })
+  }
+
+  async openCardDetails(targetModal,user){
+    
+  await this.service.getCardDetails(user.user_id).subscribe( data =>{
+      this.cardD = data;
+  this.modalService.open(targetModal,{
+    centered :true,
+    backdrop: 'static',
+    size :'1g'
+  });
+  document.getElementById('card_number').setAttribute('value',this.cardD.card_number);
+  let date = new Date( this.cardD.valid_till);
+    document.getElementById('card_type').setAttribute('value',this.cardD.card_type);
+  document.getElementById('valid_till').setAttribute('value',date.toDateString());
+    document.getElementById('card_limit').setAttribute('value',this.cardD.limit);
+    document.getElementById('balance').setAttribute('value',this.cardD.balance);
+    });
+
   }
   openDetails(targetModal,user) {
     
@@ -86,20 +106,21 @@ emiCard : any [] = [];
       this.refreshUserList();
       this.toastr.info("User Deleted");
     })
+    this.modalService.dismissAll();
   }
 
-  openCardDetails(targetModal,user){
-    this.modalService.open(targetModal, {
-      centered: true,
-      backdrop: 'static',
-      size: 'lg'
-    });
-    document.getElementById('user_id').setAttribute('value','CardDetails Will go here');
-    document.getElementById('name').setAttribute('value', user.name);
-    document.getElementById('address').setAttribute('value', user.address);
-    document.getElementById('email').setAttribute('value', user.email);
-    document.getElementById('phone_no').setAttribute('value', user.phone_no);
- }
+//   openCardDetails(targetModal,user){
+//     this.modalService.open(targetModal, {
+//       centered: true,
+//       backdrop: 'static',
+//       size: 'lg'
+//     });
+//     document.getElementById('user_id').setAttribute('value','CardDetails Will go here');
+//     document.getElementById('name').setAttribute('value', user.name);
+//     document.getElementById('address').setAttribute('value', user.address);
+//     document.getElementById('email').setAttribute('value', user.email);
+//     document.getElementById('phone_no').setAttribute('value', user.phone_no);
+//  }
 
  openEditDetails(targetModal,user){
   const modalRef = this.modalService.open(targetModal, {

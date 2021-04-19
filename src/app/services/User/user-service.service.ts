@@ -5,6 +5,7 @@ import { Banks } from 'src/app/models/user/banks';
 import { Branches } from 'src/app/models/user/branches';
 import { CardDetail } from 'src/app/models/user/card-detail';
 import { Login } from 'src/app/models/user/login';
+import { Product } from 'src/app/models/user/product';
 
 
 import { User } from 'src/app/models/user/user';
@@ -27,8 +28,11 @@ export class UserServiceService {
     return this.httpClient.post<User>(this.apiServer+"User/UserLogin/",JSON.stringify(login),this.httpOptions );
   }
 
-  createUser(user : User) : Observable<User> {
-    return this.httpClient.post<User>(this.apiServer + "User/CreateUser",JSON.stringify(user),this.httpOptions);
+  getUserData(user_id) : Observable<User>{
+    return this.httpClient.get<User>(this.apiServer + "User/GetUserData?user_id=" + user_id);
+  }
+  createUser(user) : Observable<any> {
+    return this.httpClient.post<any>(this.apiServer + "User/CreateUser",JSON.stringify(user),this.httpOptions);
   }
 
   getBanks() :Observable<Banks[]>{
@@ -46,4 +50,28 @@ export class UserServiceService {
   getEmiDetails(id) : Observable<CardDetail>{
     return this.httpClient.get<CardDetail>(this.apiServer + "EMICard/GetCardDetails?id=" + id);
   }
+
+  addToCart(userid, productid) : Observable<any>{
+    return this.httpClient.post<any>(this.apiServer + "User/AddToCart?userid=" + userid +"&productid="+productid, this.httpOptions);
+  }
+
+  getCartData(userid) : Observable<any>{
+    return this.httpClient.get<any>(this.apiServer+ "User/GetCartData?id=" + userid);
+  }
+
+  deleteFromcart(productid) : Observable<any>{
+    return this.httpClient.delete<any>(this.apiServer+ "User/DeletFromCart?productid=" +productid,this.httpOptions);
+  }
+
+  buyProduct (data) : Observable<any>{
+    return this.httpClient.post<any>(this.apiServer + "User/BuyProducts/" , JSON.stringify(data), this.httpOptions);
+  }
+
+ getPayingEMIDetails(user_id) : Observable<any>{
+   return this.httpClient.get<any>(this.apiServer+"EMICard/GetPayingEMIDetails?user_id="+user_id);
+ }
+
+ getOrderHistory(user_id) : Observable<any> {
+   return this.httpClient.get<any>(this.apiServer+"EMICard/GetOrderHistory?user_id="+user_id);
+ }
 }

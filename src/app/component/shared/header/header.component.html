@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-2 col-4">
-                Company Name
+                E-SHOP
             </div>
             <div class="col-lg-6 col-sm-12">
                 <form action="#" class="search">
@@ -30,9 +30,12 @@
                         <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
                         <div class="text">
                             <span class="text-muted">Welcome! Username</span>
-                            <div>
+                            <div *ngIf="!userLogged">
                                 <a [routerLink]="['/Login']">Login</a> |
                                 <a [routerLink]="['/Register']"> Register</a>
+                            </div>
+                            <div *ngIf="userLogged">
+                                <a (click)="logout()">Logout</a>
                             </div>
                         </div>
                     </div>

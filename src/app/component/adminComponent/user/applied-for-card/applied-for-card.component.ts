@@ -19,8 +19,9 @@ export class AppliedForCardComponent implements OnInit {
   //   {user_id: 3, name: 'Mark', dateOfbirth: 'Otto', email: '@mdo', phone_no: '9965326536'},
   // ];
 
-  elements : User [] = [];
-  headElements = ['User ID','Name','Email','Phone Number','Address','Action'];
+  elements :any = [];
+  cardD : any;
+  headElements = ['User ID','Name','Email','Phone Number','Card Data','Action'];
   
 
   constructor(private modalService: NgbModal, private service : AdminUsersService,private toastr: ToastrService) { }
@@ -30,10 +31,29 @@ export class AppliedForCardComponent implements OnInit {
   }
 
   refreshUserList(){
+    
     this.service.getAppliedUsers().subscribe((data : User[])=>{
       this.elements = data;
+      // this.service.getCardDetails(data.userId)
       console.log(data);
     })
+
+  }
+
+  async openCardDetails(targetModal,user){
+    
+  await this.service.getCardDetails(user.user_id).subscribe( data =>{
+      this.cardD = data;
+  this.modalService.open(targetModal,{
+    centered :true,
+    backdrop: 'static',
+    size :'1g'
+  });
+  document.getElementById('card_type').setAttribute('value',this.cardD.card_type);
+    document.getElementById('aadhar').setAttribute('value',this.cardD.aadhar_no);
+    document.getElementById('panCard').setAttribute('value',this.cardD.pan_card);
+    });
+
   }
   
   openDetails(targetModal,user) {
@@ -48,6 +68,7 @@ export class AppliedForCardComponent implements OnInit {
     // document.getElementById('dateOfbirth').setAttribute('value', user.dateOfbirth);
     document.getElementById('email').setAttribute('value', user.email);
     document.getElementById('phone_no').setAttribute('value', user.phone_no);
+    document.getElementById('address').setAttribute('value', user.address);
  }
   
   private getDismissReason(reason: any): string {

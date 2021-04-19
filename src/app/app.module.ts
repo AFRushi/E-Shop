@@ -38,6 +38,13 @@ import { MessengerService } from './services/messenger.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 import { LandingComponent } from './landing/landing.component';
+import { BodyContentComponent } from './landing/body-content/body-content.component';
+
+import { HeaderLandingComponent } from './landing/header-landing/header-landing.component';
+import { LogoutComponent } from './component/shared/logout/logout.component';
+import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
+
+
 
 
 @NgModule({
@@ -72,7 +79,12 @@ import { LandingComponent } from './landing/landing.component';
     CheckoutComponent,
     AboutUsComponent,
     AdminLoginComponent,
-    LandingComponent
+    LandingComponent,
+    BodyContentComponent,
+    
+    HeaderLandingComponent,
+    LogoutComponent,
+    PayEmiHereComponent
   ],
   imports: [
     BrowserModule,

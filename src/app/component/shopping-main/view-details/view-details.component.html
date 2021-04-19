@@ -12,10 +12,10 @@
                             </div>
                             <!-- card img-big-wrap.// -->
                             <div class="thumbs-wrap">
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
                             </div>
                             <!-- thumbs-wrap .// -->
                         </article>
@@ -47,10 +47,10 @@
 
                             <div class="mb-3">
                                 <h6>{{productItem.product_small_descripton}}</h6>
-                                <ul class="list-dots mb-0">
+                                <!-- <ul class="list-dots mb-0">
                                     <li>desc</li>
 
-                                </ul>
+                                </ul> -->
                             </div>
 
                             <div class="form-group">
@@ -74,13 +74,14 @@
 
                             <div class="mb-3">
                                 <var class="price h4">&#8377;{{productItem.product_price}}</var> <br>
-                                <span class="monthly">&#8377;32.00 / monthly <a href="#" class="btn-link">Check EMI OPtions </a></span>
+                                <span class="monthly"> <a href="#" class="btn-link">Check EMI OPtions </a></span>
                             </div>
                             <!-- price-detail-wrap .// -->
 
                             <div class="mb-4">
-                                <a routerLink="/Checkout" class="btn btn-primary mr-1">Buy now</a>
-                                <a href="#" class="btn btn-light">Add to cart</a>
+                                <div *ngIf="disableBuy"><a routerLink="/Checkout" class="btn btn-primary mr-1" aria-disabled="true">Buy now</a></div>
+                                <div *ngIf="!disableBuy"><a routerLink="/Checkout" class="btn btn-primary mr-1">Buy now</a></div>
+                                <a (click)="handleAddToCart()" class="btn btn-light">Add to cart</a>
                             </div>
 
                         </article>

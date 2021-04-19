@@ -18,9 +18,12 @@ import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.compo
 import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
+import { BodyContentComponent } from './landing/body-content/body-content.component';
+import { componentFactoryName } from '@angular/compiler';
+import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 
 const routes: Routes = [
-  { path : '' , component: ShoppingMainComponent },
+  // { path : '' , component: ShoppingMainComponent },
   { path : 'Shopping' , component: ShoppingMainComponent },
   { path : 'Login', component : LoginComponent},
   { path : 'Register' , component : RegisterComponent},
@@ -30,7 +33,7 @@ const routes: Routes = [
   { path : 'View-Details/:productid', component : ViewDetailsComponent},
   { path : 'Order-History', component : OrderHistoryComponent},
   { path : 'Side-Bar', component : SideBarComponent},
-  { path : 'Checkout', component : CheckoutComponent},
+  { path : 'Checkout/:productid', component : CheckoutComponent},
   { path : 'About-Us', component : AboutUsComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : 'appliedUsers', component:AppliedForCardComponent},
@@ -38,6 +41,8 @@ const routes: Routes = [
   { path : 'allProducts', component: AllProductsComponent},
   {path : 'adminComponent',component: AdminComponentComponent},
   { path : 'AdminLogin', component :AdminLoginComponent},
+  {path : 'BodyImages' ,component: BodyContentComponent},
+  { path : 'PayNow', component : PayEmiHereComponent},
   { path : '**', component : PageNoFoundComponent}
   
 ];

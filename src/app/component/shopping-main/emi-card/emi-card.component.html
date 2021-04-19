@@ -9,23 +9,23 @@
         <form [formGroup]="emicardForm">
             <p>
                 <label for="cardnumber"><b>EMI Card Number</b></label><br>
-                <input type="text" id="cardnumber" name="cardnumber" formControlName="cardnumber">
+                <input type="text" id="cardnumber" name="cardnumber" formControlName="cardnumber" disabled>
             </p>
             <p>
                 <label for="cardtype">CardType</label><br>
-                <input type="text" id="cardtype" name="cardtype" formControlName="cardtype">
+                <input type="text" id="cardtype" name="cardtype" formControlName="cardtype" disabled>
             </p>
             <p>
                 <label for="validtill">ValidTill</label><br>
-                <input type="text" id="validtill" name="validtill" formControlName="validtill" placeholder="MM/YY"><br>
+                <input type="text" id="validtill" name="validtill" formControlName="validtill" placeholder="MM/YY" disabled><br>
             </p>
             <p>
                 <label for="limit">Limit</label><br>
-                <input type="text" id="limit" name="limit" formControlName="limit">
+                <input type="text" id="limit" name="limit" formControlName="limit" disabled>
             </p>
             <p>
                 <label for="balance">Balance</label><br>
-                <input type="text" id="balance" name="balance" formControlName="balance">
+                <input type="text" id="balance" name="balance" formControlName="balance" disabled>
             </p>
         </form>
     </div>

@@ -40,10 +40,11 @@ export class EmiCardComponent implements OnInit {
   } 
 
   ngOnInit(): void {
-    debugger
-    if(sessionStorage.length != null){
+    
+    if(sessionStorage.length  > 0){
       this.data = JSON.parse(sessionStorage.getItem("user"));
       this.IsApproved = this.data.approved_by_admin;
+      // this.IsApproved = true;
       this.getEMICardDetails();
     }else{
       this.router.navigateByUrl("/Login");
@@ -51,10 +52,22 @@ export class EmiCardComponent implements OnInit {
   }
 
   getEMICardDetails(){
-    debugger
+    
     this.service.getEmiDetails(this.data.user_id).subscribe(data =>{
       this.cardDetails = data;
       console.log("Emi-Card-CardDetails",this.cardDetails);
-    })
+      
+      let validDate = new Date(this.cardDetails.valid_till) ;
+      // console.log(validDate)
+      let year = validDate.getFullYear();
+      let month = validDate.getMonth();
+      // console.log("year ",year,"date",month);
+      this.emicardForm.controls['cardnumber'].setValue(this.cardDetails.card_number);
+      this.emicardForm.controls["cardtype"].setValue(this.cardDetails.card_type);
+      this.emicardForm.controls["validtill"].setValue(month+'/'+year);
+      this.emicardForm.controls["limit"].setValue(this.cardDetails.limit);
+      this.emicardForm.controls["balance"].setValue(this.cardDetails.balance);
+
+    });
   }
 }
