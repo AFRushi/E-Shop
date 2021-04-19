@@ -18,6 +18,7 @@ export class ShoppingMainComponent implements OnInit {
 
     if(sessionStorage.length == 0){
       this.isDashBoard = true;
+      this.router.navigateByUrl("");
     }else if( sessionStorage.length > 0 && sessionStorage.getItem('role') == "admin"){
       this.isDashBoard = false;
       this.role = "admin";
@@ -29,6 +30,7 @@ export class ShoppingMainComponent implements OnInit {
       this.role = "user";
       this.userObj = JSON.parse(sessionStorage.getItem("user"));
       console.log("role :",this.role);
+      
     }
     
   }

@@ -51,7 +51,7 @@ export class AdminHeaderComponent implements OnInit {
     sessionStorage.clear();
     this.isDashBoard = true;
     window.location.reload();
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl("");
     
 
   }

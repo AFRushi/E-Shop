@@ -15,7 +15,27 @@ export class AdminLoginComponent implements OnInit {
   constructor(private service : AdminUsersService,
     private toastr : ToastrService,private router :Router) { }
   model: any = {}
+  isDashBoard =false;
+  role;
+  adminObj;
+  userObj;
   ngOnInit(): void {
+
+    if(sessionStorage.length == 0){
+      this.isDashBoard = true;
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem('role') == "admin"){
+      this.isDashBoard = false;
+      this.role = "admin";
+      this.adminObj = JSON.parse(sessionStorage.getItem('Admindata'));
+      console.log("role :",this.role);
+      this.router.navigateByUrl("");
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem("role") == "user"){
+      this.isDashBoard = false;
+      this.role = "user";
+      this.userObj = JSON.parse(sessionStorage.getItem("user"));
+      console.log("role :",this.role);
+      
+    }
   }
 
   login(loginForm : NgForm) {
