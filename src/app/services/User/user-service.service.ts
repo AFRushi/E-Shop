@@ -5,7 +5,7 @@ import { Banks } from 'src/app/models/user/banks';
 import { Branches } from 'src/app/models/user/branches';
 import { CardDetail } from 'src/app/models/user/card-detail';
 import { Login } from 'src/app/models/user/login';
-import { Product } from 'src/app/models/user/product';
+
 
 
 import { User } from 'src/app/models/user/user';
