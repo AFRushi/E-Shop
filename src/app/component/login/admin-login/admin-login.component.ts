@@ -42,7 +42,7 @@ export class AdminLoginComponent implements OnInit {
     // console.log(loginForm.value);
     this.service.getAdminLogin(loginForm.value).subscribe(data =>{
       if(data == "Invalid" ){
-        this.toastr.warning("Invalid Username Or Password");
+        alert("Invalid Username Or Password");
       }else{
        console.log(JSON.stringify(data));
        sessionStorage.setItem("role","admin");

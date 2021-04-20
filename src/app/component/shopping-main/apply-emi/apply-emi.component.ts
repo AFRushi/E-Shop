@@ -136,7 +136,7 @@ onSubmit() {
    }
  });
 
- window.location.reload();
+ 
  this.router.navigateByUrl("/Shopping");
 }
 
