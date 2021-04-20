@@ -1,0 +1,20 @@
+.navbar{
+    background-color: #0c2949;
+    color: #d6c6b0;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn{
+    background-color: #d6c6b0;
+    border-color:#0c2949;
+    color: black;
+}
+.mr-2 {
+    color: #d6c6b0;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.icon, .fa{
+    color: #d6c6b0;
+}

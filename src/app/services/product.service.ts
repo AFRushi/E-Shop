@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Product } from '../models/user/product';
+import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,19 +20,36 @@ export class ProductService {
 
   // ]
 
-  private apiServer = "http://localhost:56019/Api/";
+  private apiServer = "http://localhost:51732/Api/";
   httpOptions = {
-    headers: new HttpHeaders({
+    headers: new HttpHeaders({ 
       'Content-Type': 'application/json'
     })
   }
   constructor(private httpClient : HttpClient) { }
 
   getAllProducts() : Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.apiServer + 'Products/GetProductList');
+    return this.httpClient.get<Product[]>(this.apiServer + 'Products/GetProductList').pipe(
+      catchError(this.errorHandler)
+    );;
   }
 
   getProductById(id) :Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.apiServer + 'Products/GetProductById?id=' + id);
+    return this.httpClient.get<Product[]>(this.apiServer + 'Products/GetProductById?id=' + id).pipe(
+      catchError(this.errorHandler)
+    );;
+  }
+
+  errorHandler(error) {
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
   }
 }

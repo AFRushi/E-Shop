@@ -13,7 +13,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" routerLink="/Shopping">Home</a>
                 </li>
                 <div *ngIf="!IsApplied">
                     <li class="nav-item">
@@ -26,19 +26,19 @@
                     </li>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">SmartPhones</a>
+                    <a class="nav-link">SmartPhones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Refrigerators</a>
+                    <a class="nav-link">Refrigerators</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Air Conditioners</a>
+                    <a class="nav-link">Air Conditioners</a>
                 </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link">Fitness Equipments</a>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fitness Equipments</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Furnitures</a>
+                    <a class="nav-link" routerLink="/PayNow">Pay EMI Here</a>
                 </li>
                 <li class="nav-item">
                     <a [routerLink]="['/Order-History']" class="nav-link">Order History</a>

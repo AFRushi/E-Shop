@@ -1,4 +1,5 @@
 import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler/src/core';
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import{FormControl,Validators,FormGroup}from '@angular/forms';
 import { Router } from '@angular/router';
@@ -32,7 +33,7 @@ export class ApplyEmiComponent implements OnInit {
    branches : Branches[]=[];
   ifscSelect : string;
   cardTypeSelected : any;
-  constructor(private service : UserServiceService,private route : Router) { }
+  constructor(private service : UserServiceService,private router : Router) { }
   get userid() {
     return this.applyemiForm.get('userid');
   } 
@@ -61,12 +62,14 @@ export class ApplyEmiComponent implements OnInit {
 
   ngOnInit(): void {
     
-    if(sessionStorage.length != null){
+    if(sessionStorage.length > 0){
       this.user = JSON.parse(sessionStorage.getItem("user"));
       console.log(this.user);
       this.Name = this.user.username;
       console.log(this.Name);
       this.FillBanks();
+    }else{
+      this.router.navigateByUrl("/Login");
     }
 
     
@@ -86,7 +89,7 @@ FillBranch(SelBankId : number){
  });
 }
 FillIfsc(ifsc: any){
-  debugger
+  
   this.branches.forEach(element => {
     if(element.branch_id== ifsc){
       this.ifscSelect = element.ifsc_code;
@@ -114,18 +117,27 @@ onSubmit() {
 
  this.service.saveApplyEmiCard(dataObject).subscribe(data =>{
    if(data == "Success"){
+    
+    this.service.getUserData(this.user.user_id).subscribe(res =>{
 
+      console.log("User Data", res);
+      sessionStorage.setItem("user",JSON.stringify(res));
+      console.log("Session Data Update", JSON.parse(sessionStorage.getItem('user')));
+    })
+
+    // this.router.navigateByUrl("/Shopping");
     alert("Applied Sucessfully");
-    this.route.navigateByUrl("/Shopping");
-
+    
    }else if(data == "AlreadyExist"){
     alert("Applied Card already Exist");
+    
    }else if (data == null || data == undefined){
       alert("Something Went Wrong");
    }
  });
+
+ 
+ this.router.navigateByUrl("/Shopping");
 }
 
   }
-
-

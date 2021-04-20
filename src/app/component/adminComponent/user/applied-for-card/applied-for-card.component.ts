@@ -3,6 +3,7 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/models/user/user';
 import { AdminUsersService } from 'src/app/services/Admin/admin-users.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-applied-for-card',
   templateUrl: './applied-for-card.component.html',
@@ -19,21 +20,60 @@ export class AppliedForCardComponent implements OnInit {
   //   {user_id: 3, name: 'Mark', dateOfbirth: 'Otto', email: '@mdo', phone_no: '9965326536'},
   // ];
 
-  elements : User [] = [];
-  headElements = ['User ID','Name','Email','Phone Number','Address','Action'];
+  elements :any = [];
+  cardD : any;
+  headElements = ['User ID','Name','Email','Phone Number','Card Data','Action'];
   
-
-  constructor(private modalService: NgbModal, private service : AdminUsersService,private toastr: ToastrService) { }
+  isDashBoard =false;
+  role;
+  adminObj;
+  constructor(private modalService: NgbModal,
+     private service : AdminUsersService,private toastr: ToastrService,private router : Router) { }
 
   ngOnInit(): void {
-    this.refreshUserList();
+    debugger
+    if(sessionStorage.length == 0){
+      this.isDashBoard =true;
+      this.router.navigateByUrl("");
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem('role') == "admin"){
+
+      this.isDashBoard = false;
+      this.role = "admin";
+      this.adminObj = JSON.parse(sessionStorage.getItem('Admindata'));
+      console.log("role :",this.role);
+
+      this.refreshUserList();
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem("role") == "user"){
+      this.isDashBoard = false;
+      this.router.navigateByUrl("/AdminLogin");
+    }
+    
   }
 
   refreshUserList(){
+    
     this.service.getAppliedUsers().subscribe((data : User[])=>{
       this.elements = data;
+      // this.service.getCardDetails(data.userId)
       console.log(data);
     })
+
+  }
+
+  async openCardDetails(targetModal,user){
+    
+  await this.service.getCardDetails(user.user_id).subscribe( data =>{
+      this.cardD = data;
+  this.modalService.open(targetModal,{
+    centered :true,
+    backdrop: 'static',
+    size :'1g'
+  });
+  document.getElementById('card_type').setAttribute('value',this.cardD.card_type);
+    document.getElementById('aadhar').setAttribute('value',this.cardD.aadhar_no);
+    document.getElementById('panCard').setAttribute('value',this.cardD.pan_card);
+    });
+
   }
   
   openDetails(targetModal,user) {
@@ -48,6 +88,7 @@ export class AppliedForCardComponent implements OnInit {
     // document.getElementById('dateOfbirth').setAttribute('value', user.dateOfbirth);
     document.getElementById('email').setAttribute('value', user.email);
     document.getElementById('phone_no').setAttribute('value', user.phone_no);
+    document.getElementById('address').setAttribute('value', user.address);
  }
   
   private getDismissReason(reason: any): string {

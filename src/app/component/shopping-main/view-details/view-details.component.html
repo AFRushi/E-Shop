@@ -1,7 +1,6 @@
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y bg">
     <div class="container">
-
         <article class="card">
             <div class="card-body">
                 <div class="row">
@@ -12,10 +11,10 @@
                             </div>
                             <!-- card img-big-wrap.// -->
                             <div class="thumbs-wrap">
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
-                                <a href="#" class="item-thumb"> <img src="https://im.whatshot.in/img/2020/May/header-725x420-delhi-flower-valleys-d-1589910435.jpg"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
+                                <a class="item-thumb"> <img [src]="imageUrl"></a>
                             </div>
                             <!-- thumbs-wrap .// -->
                         </article>
@@ -23,38 +22,23 @@
                     </aside>
                     <main class="col-md-6">
                         <article>
-                            <a class="text-primary btn-link">Category</a>
+                            
                             <h3 class="title">{{productItem.product_name}}</h3>
                             <div>
-                                <ul class="rating-stars">
-                                    <li class="stars-active">
-                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <span class="label-rating mr-3 text-muted">7/10</span>
-                                <a class="btn-link  mr-3 text-muted"> <i class="fa fa-heart"></i> Save for later </a>
-
+                                                               
                             </div>
 
                             <hr>
 
                             <div class="mb-3">
                                 <h6>{{productItem.product_small_descripton}}</h6>
-                                <ul class="list-dots mb-0">
+                                <!-- <ul class="list-dots mb-0">
                                     <li>desc</li>
-
-                                </ul>
+                                </ul> -->
                             </div>
 
                             <div class="form-group">
-                                <label class="text-muted">Available Colors</label>
+                                <label class="text-muted" style="color: #0c2949;">Available Colors</label>
                                 <div>
                                     <label class="js-check btn btn-check active mr-1">
                                             <input type="radio" name="option_size" value="option1" checked="">
@@ -74,13 +58,15 @@
 
                             <div class="mb-3">
                                 <var class="price h4">&#8377;{{productItem.product_price}}</var> <br>
-                                <span class="monthly">&#8377;32.00 / monthly <a href="#" class="btn-link">Check EMI OPtions </a></span>
+                                <span class="monthly"> <a href="#" class="btn-link">Check EMI OPtions </a></span>
                             </div>
                             <!-- price-detail-wrap .// -->
 
                             <div class="mb-4">
-                                <a routerLink="/Checkout" class="btn btn-primary mr-1">Buy now</a>
-                                <a href="#" class="btn btn-light">Add to cart</a>
+                                <div *ngIf="!disableBuy"><a [routerLink]="['/Checkout',productItem.product_id]" class="btn btn-secondary mr-1" aria-disabled="true">Buy now</a></div>
+                                <div *ngIf="disableBuy"><a [routerLink]="['/Checkout',productItem.product_id]" class="btn btn-secondary mr-1">Buy now</a></div>
+
+                                <div><a (click)="handleAddToCart()" style="background-color: #d4cdc2;" class="btn btn-light">Add to cart</a></div>
                             </div>
 
                         </article>
@@ -101,16 +87,12 @@
                         <dl class="row">
                             <dt class="col-sm-3">Display</dt>
                             <dd class="col-sm-9">13.3-inch LED-backlit display with IPS</dd>
-
                             <dt class="col-sm-3">Processor</dt>
                             <dd class="col-sm-9">2.3GHz dual-core Intel Core i5</dd>
-
                             <dt class="col-sm-3">Camera</dt>
                             <dd class="col-sm-9">720p FaceTime HD camera</dd>
-
                             <dt class="col-sm-3">Memory</dt>
                             <dd class="col-sm-9">8 GB RAM or 16 GB RAM</dd>
-
                             <dt class="col-sm-3">Graphics</dt>
                             <dd class="col-sm-9">Intel Iris Plus Graphics 640</dd>
                         </dl>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-main',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingMainComponent implements OnInit {
 
-  constructor() { }
+  role;
+  isDashBoard=false;
+  adminObj;
+  userObj;
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+
+    if(sessionStorage.length == 0){
+      this.isDashBoard = true;
+      this.router.navigateByUrl("");
+    }else if( sessionStorage.length > 0 && sessionStorage.getItem('role') == "admin"){
+      this.isDashBoard = false;
+      this.role = "admin";
+      this.adminObj = JSON.parse(sessionStorage.getItem('Admindata'));
+      console.log("role :",this.role);
+      this.router.navigateByUrl("/AdminLogin");
+    }else if(sessionStorage.length > 0 && sessionStorage.getItem('role') == "user"){
+      this.isDashBoard = false;
+      this.role = "user";
+      this.userObj = JSON.parse(sessionStorage.getItem("user"));
+      console.log("role :",this.role);
+      
+    }
+    
   }
 
 }

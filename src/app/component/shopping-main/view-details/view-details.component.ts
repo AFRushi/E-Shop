@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {ProductService} from "../../../services/product.service";
 //import {ProductModelServer} from "../../../models/product";
 import {map} from "rxjs/operators";
 import {CartService} from "../../../services/cart.service";
 import { MessengerService } from 'src/app/services/messenger.service';
 import { Product } from 'src/app/models/user/product';
+import { UserServiceService } from 'src/app/services/User/user-service.service';
 
 
 declare let $: any;
@@ -19,17 +20,30 @@ export class ViewDetailsComponent implements  OnInit {
   // AfterViewInit,
   productItem;
   imageUrl : any ;
-  constructor(private route: ActivatedRoute,
+  user :any
+  disableBuy=true;
+  constructor(
     private productService: ProductService,
-    private cartService: CartService,
-    private msgService : MessengerService,private router:ActivatedRoute) { }
+    private service : UserServiceService,private router:ActivatedRoute,private router1 : Router) { }
     
     ngOnInit(){
       // this.msgService.getProduct().subscribe( (item : Product)=>{
         
       //   console.log(item);
       // });
-      this.getProductDetails();
+
+      if(sessionStorage.length > 0){
+        this.getProductDetails();
+        this.user = JSON.parse(sessionStorage.getItem("user"));
+        console.log(this.user);
+        if(this.user.approved_by_admin != false){
+          this.disableBuy = false;
+        }
+      }else{
+        this.router1.navigateByUrl("/Login");
+        this.disableBuy = true;
+      }
+      
       
     }
 
@@ -49,6 +63,30 @@ export class ViewDetailsComponent implements  OnInit {
       //   console.log(this.imageUrl)
       // }
      
+    }
+
+    handleAddToCart(){
+      // this.msg.senMsg(this.productItem);
+      try{
+        this.user = JSON.parse(sessionStorage.getItem('user'));
+          
+        console.log("User Id:",this.user.user_id,"Product ID:",this.productItem.product_id);
+          this.service.addToCart(this.user.user_id,this.productItem.product_id).subscribe(data =>{
+              if(data == "Success"){
+                  alert("Successfully addded to cart");
+              }else{
+                  alert("Network Problems");
+              }
+           });
+          
+  
+          }catch(error){
+          console.error(error);
+        
+          }
+    }
+    Popup(){
+      alert("EMI Card is Being Processed");
     }
   // ngOnInit(): void {
 
@@ -119,12 +157,10 @@ export class ViewDetailsComponent implements  OnInit {
   /*addToCart(id: Number) {
     this.cartService.AddProductToCart(id, this.quantityInput.nativeElement.value);
   }
-
   Increase() {
     let value = parseInt(this.quantityInput.nativeElement.value);
     if (this.product.quantity >= 1){
       value++;
-
       if (value > this.product.quantity) {
         // @ts-ignore
         value = this.product.quantity;
@@ -132,15 +168,12 @@ export class ViewDetailsComponent implements  OnInit {
     } else {
       return;
     }
-
     this.quantityInput.nativeElement.value = value.toString();
   }
-
   Decrease() {
     let value = parseInt(this.quantityInput.nativeElement.value);
     if (this.product.quantity > 0){
       value--;
-
       if (value <= 0) {
         // @ts-ignore
         value = 0;

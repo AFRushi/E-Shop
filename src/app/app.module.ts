@@ -36,7 +36,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MessengerService } from './services/messenger.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
+
+import { SmartPhonesComponent } from './component/shopping-main/smart-phones/smart-phones.component';
+import { RefrigeratorsComponent } from './component/shopping-main/refrigerators/refrigerators.component';
+import { AirConditionersComponent } from './component/shopping-main/air-conditioners/air-conditioners.component';
+
+import { LogoutComponent } from './component/shared/logout/logout.component';
+import { LandingComponent } from './landing/landing.component';
+import { BodyContentComponent } from './landing/body-content/body-content.component';
+import { HeaderLandingComponent } from './landing/header-landing/header-landing.component';
+import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -59,6 +70,7 @@ import { AdminLoginComponent } from './component/login/admin-login/admin-login.c
     ForgotPasswordComponent,
     EmiCardComponent,
     OrderHistoryComponent,
+    PayEmiHereComponent,
     AdminComponentComponent,
     AppliedForCardComponent,
     ApprovedUsersComponent,
@@ -70,7 +82,15 @@ import { AdminLoginComponent } from './component/login/admin-login/admin-login.c
     SideBarComponent,
     CheckoutComponent,
     AboutUsComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    SmartPhonesComponent,
+    RefrigeratorsComponent,
+    AirConditionersComponent,
+    LogoutComponent,
+    LandingComponent,
+    BodyContentComponent,
+    HeaderLandingComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

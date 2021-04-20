@@ -1,6 +1,7 @@
 export class CardDetail {
 
     emi_card_id : number;
+    card_number : number;
     user_id : number;
     card_type : string;
     valid_till :Date;

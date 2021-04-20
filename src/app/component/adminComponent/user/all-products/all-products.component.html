@@ -12,26 +12,25 @@
 
                 </thead>
                 <tbody style="height: 600px;overflow: scroll;">
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of products; let i = index">
 
                         <td>{{product.product_id}}</td>
-                        <td><img src="assets/ProductsImage/1_SmartPhone_realme-narzo-20.jpeg" class="mh-100" style="width: 50px; height: 100px;"></td>
+                        <td><img src={{product.product_image}} class="mh-100" style="width: 50px; height: 100px;"></td>
                         <td>{{product.product_name}}</td>
-                        <td>{{product.color}}</td>
-                        <td>{{product.smallDesc}}</td>
-                        <td>{{product.price| currency:'INR'}}</td>
-                        <td>{{product.qty}}</td>
+                        <td>{{product.product_color}}</td>
+                        <td>{{product. product_small_descripton}}</td>
+                        <td>{{product.product_price| currency:'INR'}}</td>
+                        <!-- <td>{{product.qty}}</td> -->
                         <td>
-                            <button class="btn btn-sm btn-info" (click)="openDetails(contentDetails,user)">
+                            <button class="btn btn-sm btn-info" (click)="openDetails(contentDetails,product)">
                                 <i class="fa fa-eye-slash" aria-hidden="true"></i>
                             </button>
-                            <button class="btn btn-sm btn-danger" (click)="openApprove(contentDelete, user)">
-                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                            <button class="btn btn-sm btn-danger" (click)="onUserDelete(contentDelete, product)">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </td>
                     </tr>
                     <!-- <tr *ngFor="let user of userData">
-
                         <td>{{user.firstName}}</td>
                         <td>{{user.lastName}}</td>
                         <td>{{user.email}}</td>
@@ -46,3 +45,73 @@
         </div>
     </div>
 </div>
+
+
+
+
+<ng-template #contentDetails let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Product Data</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="product_name">Product Name</label>
+                <div class="input-group">
+                    <input id="product_name" class="form-control" disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="product_color">Product Color</label>
+                <div class="input-group">
+                    <input id="product_color" class="form-control" disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Product Price</label>
+                <div class="input-group">
+                    <input id="product_price" class="form-control" disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label> Product Description</label>
+                <div class="input-group">
+                    <input type="text" id="product_desc" class="form-control" disabled="true">
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                <label for="address">Address</label>
+                <div class="input-group">
+                    <input id="address" class="form-control" disabled="true">
+                </div>
+            </div> -->
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+    </div>
+</ng-template>
+
+
+
+
+<ng-template #contentDelete let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Delete Product</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <h2>Are you sure you want to Delete this user product.</h2>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-primary" (click)="onDelete()"> Yes, Approve!</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+    </div>
+</ng-template>

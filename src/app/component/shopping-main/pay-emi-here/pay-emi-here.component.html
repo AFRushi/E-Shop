@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h2><b style="color: #d6c6b0;">EMI Payment</b></h2>
+                        </div>
+
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+
+                        <th>S.no</th>
+                        <th>Product Name</th>
+                        <th>Order Date</th>
+                        <th>Price</th>
+                        <th>EMI Period</th>
+                        <th>EMI / Month</th>
+                        <th>Due Date</th>
+                        <th>Payment Due In </th>
+                        <th>Pay Now</th>
+
+                    </thead>
+                    <tbody *ngFor="let item of emiData; let i = index">
+                        <tr class="table-striped">
+                            <td>{{i+1}}</td>
+                            <td>{{item.product_name}}</td>
+                            <td>{{item.start_date | date : "dd/MM/yyyy"}}</td>
+                            <td>&#8377;{{item.product_price}}</td>
+                            <td>{{item.emi_period}} </td>
+                            <td>{{item.emi_per_month | number: '1.0-2'}} </td>
+                            <td>{{DueDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{noOfDueDaysRemaining | number: '1.0-0'}} </td>
+                            <button class="btn btn btn-success" (click)="PaySuccess()" disabled="disablePay">Pay Now</button>
+                        </tr>
+                        <!-- <tr class="table-striped1">
+                            <td>2</td>
+                            <td>Refrigerator</td>
+                            <td>Jun 21, 2018</td>
+                            <td>&#8377;62,600</td>
+                            <td> </td>
+                            <td> </td>
+                            <button [routerLink]="['/']" class="btn btn btn-success">Pay Now</button>
+                        </tr>
+                        <tr class="table-striped">
+                            <td>3</td>
+                            <td>Furniture</td>
+                            <td>Jul 04, 2019</td>
+                            <td>&#8377;3,500</td>
+                            <td> </td>
+                            <td> </td>
+                            <button [routerLink]="['/']" class="btn btn btn-success">Pay Now</button>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
