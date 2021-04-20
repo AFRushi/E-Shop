@@ -125,9 +125,9 @@ onSubmit() {
       console.log("Session Data Update", JSON.parse(sessionStorage.getItem('user')));
     })
 
-    this.router.navigateByUrl("/Shopping");
+    // this.router.navigateByUrl("/Shopping");
     alert("Applied Sucessfully");
-
+    
    }else if(data == "AlreadyExist"){
     alert("Applied Card already Exist");
     
@@ -135,6 +135,9 @@ onSubmit() {
       alert("Something Went Wrong");
    }
  });
+
+ window.location.reload();
+ this.router.navigateByUrl("/Shopping");
 }
 
   }

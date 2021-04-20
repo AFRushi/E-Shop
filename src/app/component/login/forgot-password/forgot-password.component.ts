@@ -10,7 +10,7 @@ import { CrudService } from 'src/app/services/User/crud.service';
 export class ForgotPasswordComponent implements OnInit {
 
   resetForm = new FormGroup({
-    emailid : new FormControl('',[Validators.required, Validators.email])
+    username : new FormControl('',[Validators.required])
   })
 
 
@@ -19,22 +19,25 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  get emailid()
+  get username()
   {
-    return this.resetForm.get('emailid');
+    return this.resetForm.get('username');
   }
   onSubmit()
   {
     
     console.log(this.resetForm.value);
     let resetobj = new user();
-    resetobj.email = this.emailid.value;
+    resetobj.username = this.username.value;
 
     this.crudService.mail(resetobj).subscribe(res => {
       console.log(res);
       if(res == "Successfull"){
         alert("Reset Password Link is been sent to your Email");
-      }else{
+      }
+      else if (res == "User Does not exist"){
+      }
+      else{
         alert("Failed To send the link");
       }
     });
@@ -42,5 +45,5 @@ export class ForgotPasswordComponent implements OnInit {
 }
 export class user
 {
-  email : string;
+  username : string;
 }
