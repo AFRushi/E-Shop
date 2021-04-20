@@ -12,6 +12,7 @@ export class OrderHistoryComponent implements OnInit {
   user;
   orders;
   products;
+  emptyOrders;
   constructor(private router : Router, private userService : UserServiceService) { }
 
   ngOnInit(): void {

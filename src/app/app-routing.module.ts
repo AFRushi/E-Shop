@@ -21,6 +21,7 @@ import { AdminLoginComponent } from './component/login/admin-login/admin-login.c
 import { BodyContentComponent } from './landing/body-content/body-content.component';
 
 import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
+import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path : '' , component: BodyContentComponent },
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path : 'AdminLogin', component :AdminLoginComponent},
   {path : 'BodyImages' ,component: BodyContentComponent},
   { path : 'PayNow', component : PayEmiHereComponent},
+  { path : 'reset-password', component : ResetPasswordComponent},
   { path : '**', component : PageNoFoundComponent}
   
 ];

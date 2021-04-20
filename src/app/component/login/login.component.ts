@@ -47,11 +47,11 @@ export class LoginComponent implements OnInit {
          console.log(JSON.stringify(data));
         sessionStorage.setItem("role","user")
         sessionStorage.setItem("user",JSON.stringify(data));
-        
+        window.location.reload();
         this.router.navigateByUrl("/Shopping");
         
       }
     })
-    window.location.reload();
+    
   }
 }

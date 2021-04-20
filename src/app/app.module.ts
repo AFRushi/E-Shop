@@ -43,6 +43,7 @@ import { BodyContentComponent } from './landing/body-content/body-content.compon
 import { HeaderLandingComponent } from './landing/header-landing/header-landing.component';
 import { LogoutComponent } from './component/shared/logout/logout.component';
 import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
+import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
 
 
 
@@ -84,7 +85,8 @@ import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-
     
     HeaderLandingComponent,
     LogoutComponent,
-    PayEmiHereComponent
+    PayEmiHereComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

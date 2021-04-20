@@ -21,7 +21,7 @@ export class ViewDetailsComponent implements  OnInit {
   productItem;
   imageUrl : any ;
   user :any
-  disableBuy=false;
+  disableBuy=true;
   constructor(
     private productService: ProductService,
     private service : UserServiceService,private router:ActivatedRoute,private router1 : Router) { }
@@ -36,8 +36,8 @@ export class ViewDetailsComponent implements  OnInit {
         this.getProductDetails();
         this.user = JSON.parse(sessionStorage.getItem("user"));
         console.log(this.user);
-        if(this.user.approved_by_admin == false){
-          this.disableBuy = true;
+        if(this.user.approved_by_admin != false){
+          this.disableBuy = false;
         }
       }else{
         this.router1.navigateByUrl("/Login");
@@ -84,6 +84,9 @@ export class ViewDetailsComponent implements  OnInit {
           console.error(error);
         
           }
+    }
+    Popup(){
+      alert("EMI Card is Being Processed");
     }
   // ngOnInit(): void {
 

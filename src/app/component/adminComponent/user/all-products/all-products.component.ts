@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { sequenceEqual } from 'rxjs/operators';
 import { Product } from 'src/app/models/user/product';
+import { AdminUsersService } from 'src/app/services/Admin/admin-users.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -18,13 +19,14 @@ export class AllProductsComponent implements OnInit {
 //   ];
 
   productsHeader = ['Product ID','Product Img','Product Name', 'Color','Description','Price','Action'];
-  
+  approveId : any;
   products :Product[];
   ImageUrls : string[];
   isDashBoard =false;
   role;
   adminObj
-  constructor(private service : ProductService, private modalService : NgbModal,private router : Router) { }
+  constructor(private service : ProductService, 
+    private modalService : NgbModal,private router : Router,private adminService : AdminUsersService) { }
 
   ngOnInit(): void {
 
@@ -74,6 +76,21 @@ export class AllProductsComponent implements OnInit {
     // document.getElementById('dateOfbirth').setAttribute('value', user.dateOfbirth);
     document.getElementById('product_price').setAttribute('value', product.product_price);
     document.getElementById('product_desc').setAttribute('value', product.product_long_description);
-  
  }
+
+ onUserDelete(targetModal, user) {
+  this.approveId = user.product_id;
+  this.modalService.open(targetModal, {
+    backdrop: 'static',
+    size: 'lg'
+  });
+}
+onDelete(){
+  // Servicecode
+  this.adminService.deleteProduct(this.approveId).subscribe(res =>{
+    this.refreshList();
+    // this.toastr.info("User Deleted");
+  })
+  this.modalService.dismissAll();
+}
 }
