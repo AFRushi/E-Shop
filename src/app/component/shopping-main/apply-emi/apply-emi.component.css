@@ -1,6 +1,7 @@
 .card-header {
-    background-color: aqua;
-    color: black;
+    background-color: #0c2949;
+    opacity: 0.8;
+    color: white;
     width: 400px;
     height: 60px;
     margin-top: 20px;
@@ -8,22 +9,22 @@
     text-align: center;
 }
 
-.col-md-4 offset-md-4 {
+.col-md-4 {
     background-color: white;
     margin-top: 10px;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: left;
 }
 
-.but {
-    background-color: blue;
-    color: white;
+.button {
+    background-color: #d6c6b0;
+    color: black;
     padding: 16px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 400px;
-    height: 40px;
+    height: 45px;
     opacity: 0.9;
 }
 
@@ -47,7 +48,8 @@ input[type=number] {
     border: 1px;
 }
 
-.btn btn-primary btn-block {
+
+/* .btn btn-primary btn-block {
     color: blue
 }
 
@@ -63,4 +65,4 @@ input[type=text] {
     height: 40px;
     display: inline-block;
     margin: 5px 0 2px 0;
-}
+} */

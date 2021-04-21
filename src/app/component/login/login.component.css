@@ -1,11 +1,16 @@
-.card-header {
-    background-color: aqua;
+.card-header
+{
+    background-color: #0c2949;
+    color: white;
+    opacity: 0.8;
+   
 }
-
-.btn btn-primary btn-block {
-    color: blue;
+.btn 
+{
+    background-color: #d6c6b0;
+    color: black;
 }
-
-.newuser {
-    padding-top: 15px;
+.row{
+    margin-top: 20px;
+    padding-top: 20px;
 }

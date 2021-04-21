@@ -1,8 +1,8 @@
 <!--div class="modal fade" id="quoteForm" tabindex="-1" role="dialog" aria-labelledby="quoteForm" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content p-md-3"-->
-<div class="header">
-</div>
+<!-- <div class="header">
+</div> -->
 <div class="body">
     <div class="pb-5">
         <div class="container">
@@ -18,11 +18,11 @@
                                         <div class="p-2 px-3 text-uppercase">Product</div>
                                     </th>
                                     <!-- <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Price</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Remove</div>
-                                    </th> -->
+                                                <div class="py-2 text-uppercase">Price</div>
+                                            </th>
+                                            <th scope="col" class="border-0 bg-light">
+                                                <div class="py-2 text-uppercase">Remove</div>
+                                            </th> -->
                                     <th scope="col" class="border-0 bg-light">
                                         <div class="py-2 text-uppercase"></div>
                                     </th>
@@ -53,33 +53,31 @@
                                         <!-- </div> -->
                                     </tr>
                                     <!-- <tr>
-                                    <th scope="row">
-                                        <div class="p-2">
-                                            <img src="https://therichpost.com/wp-content/uploads/2020/06/jeans3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <td class="align-middle"><strong>$79.00</strong></td>
-                                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                                    <td class="border-0 align-middle"><button [routerLink]="['/Checkout']" class="btn btn-primary rounded-pill btn-block">Proceed to Checkout</button></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <div class="p-2">
-                                            <img src="https://therichpost.com/wp-content/uploads/2020/06/jeans3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <td class="align-middle"><strong>$79.00</strong></td>
-                                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                                    <td class="border-0 align-middle"><button [routerLink]="['/Checkout']" class="btn btn-primary rounded-pill btn-block">Proceed to Checkout</button></td>
-
-                                </tr> -->
+                                            <th scope="row">
+                                                <div class="p-2">
+                                                    <img src="https://therichpost.com/wp-content/uploads/2020/06/jeans3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <div class="ml-3 d-inline-block align-middle">
+                                                        <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td class="align-middle"><strong>$79.00</strong></td>
+                                            <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                                            <td class="border-0 align-middle"><button [routerLink]="['/Checkout']" class="btn btn-primary rounded-pill btn-block">Proceed to Checkout</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="p-2">
+                                                    <img src="https://therichpost.com/wp-content/uploads/2020/06/jeans3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <div class="ml-3 d-inline-block align-middle">
+                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td class="align-middle"><strong>$79.00</strong></td>
+                                            <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                                            <td class="border-0 align-middle"><button [routerLink]="['/Checkout']" class="btn btn-primary rounded-pill btn-block">Proceed to Checkout</button></td>
+                                        </tr> -->
                                 </div>
                             </tbody>
                         </table>
@@ -117,6 +115,8 @@
             </div>
 
         </div>
+        <!-- </div>
+    <<<<<<< HEAD </div> -->
     </div>
 
 </div>
@@ -139,3 +139,25 @@
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
     </div>
 </ng-template>
+
+
+<!-- </div> -->
+
+
+<!-- <ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Delete Product!!</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+    </div>
+    <div class="modal-body">
+        <h2>Are you sure you want to remove the product from cart ?.</h2>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-primary" (click)="onDelete()"> Yes, Approve!</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template> -->

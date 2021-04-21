@@ -18,10 +18,16 @@ import { SideBarComponent } from './component/shared/nav/side-bar/side-bar.compo
 import { CheckoutComponent } from './component/shopping-main/checkout/checkout.component';
 import { AboutUsComponent } from './component/shopping-main/about-us/about-us.component';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
+import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 import { BodyContentComponent } from './landing/body-content/body-content.component';
 
-import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
+import { SmartPhonesComponent } from './component/shopping-main/smart-phones/smart-phones.component';
+import { RefrigeratorsComponent } from './component/shopping-main/refrigerators/refrigerators.component';
+import { AirConditionersComponent } from './component/shopping-main/air-conditioners/air-conditioners.component';
 import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
+
+
+
 
 const routes: Routes = [
   { path : '' , component: BodyContentComponent },
@@ -36,11 +42,16 @@ const routes: Routes = [
   { path : 'Side-Bar', component : SideBarComponent},
   { path : 'Checkout/:productid', component : CheckoutComponent},
   { path : 'About-Us', component : AboutUsComponent},
+  { path : 'PayNow', component : PayEmiHereComponent},
+  { path : 'Smart-Phones', component : SmartPhonesComponent},
+  { path : 'Refrigerators', component : RefrigeratorsComponent},
+  { path : 'Air-Conditioners', component : AirConditionersComponent},
   { path : 'forgot-password',component:ForgotPasswordComponent},
   { path : 'appliedUsers', component:AppliedForCardComponent},
   { path : 'approvedUsers', component:ApprovedUsersComponent},
   { path : 'allProducts', component: AllProductsComponent},
   {path : 'adminComponent',component: AdminComponentComponent},
+  { path : 'reset-password', component : ResetPasswordComponent},
   { path : 'AdminLogin', component :AdminLoginComponent},
   {path : 'BodyImages' ,component: BodyContentComponent},
   { path : 'PayNow', component : PayEmiHereComponent},

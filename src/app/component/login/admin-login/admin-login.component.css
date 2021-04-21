@@ -1,9 +1,15 @@
 .card-header {
-    background-color: aqua;
+    background-color: #0c2949;
+    opacity: 0.85;
+    color: white;
+    margin-top: 40px;
 }
 
-.btn btn-primary btn-block {
-    color: blue;
+.btn  {
+    background-color: #d6c6b0;
+    color: black;
+    border-color: #d6c6b0;
+    
 }
 
 .newuser {
