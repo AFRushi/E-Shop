@@ -1,15 +1,18 @@
-.invalid-feedback
-{
-    color:red;
+.invalid-feedback {
+    color: red;
 }
-.card-header
-{
+
+.card-header {
     background-color: #0c2949;
     color: white;
     opacity: 0.8;
 }
-.btn 
-{
+
+.btn {
     background-color: #d6c6b0;
     color: black;
+}
+
+.row {
+    margin-top: 10px;
 }

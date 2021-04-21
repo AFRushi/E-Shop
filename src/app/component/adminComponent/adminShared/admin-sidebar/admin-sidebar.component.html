@@ -16,8 +16,8 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
             <a *ngIf="role === 'admin'" class="nav-link" routerLink="">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Admin Dashboard</span>
+                <i class="fas fa-fw fa-tachometer-alt" style="color: #0c2949;"></i>
+                <span style="color: #0c2949;"> Admin Dashboard</span>
             </a>
             <a *ngIf="isDashBoard" class="nav-link" routerLink="">
                 <i class="fa fa-shopping-bag" style="color: #0c2949;" aria-hidden="true"></i>
@@ -31,20 +31,20 @@
         <!-- Divider -->
         <hr class="sidebar-divider" style="color: #0c2949;">
         <!-- Heading -->
-        <div class="sidebar-heading">
+        <!-- <div class="sidebar-heading">
             Interface
-        </div>
+        </div> -->
         <!-- Nav Item - Pages Collapse Menu -->
         <!-- Admin -->
         <li *ngIf="role === 'admin'" class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Admin Views</span>
+                <i class="fas fa-fw fa-cog" style="color: #0c2949;"></i>
+                <span style="color: #0c2949;">Admin Views</span>
             </a>
 
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Components:</h6>
+                    <h6 class="collapse-header"></h6>
                     <a class="collapse-item" routerLink="appliedUsers">Applied Users Details</a>
                     <a class="collapse-item" routerLink="approvedUsers">Approved User Details</a>
                 </div>
@@ -97,8 +97,8 @@
         <!-- Admin  -->
         <li *ngIf="role === 'admin'" class="nav-item">
             <a class="nav-link" routerLink="allProducts">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Products</span></a>
+                <i class="fas fa-fw fa-chart-area" style="color: #0c2949;"></i>
+                <span style="color: #0c2949;">Products</span></a>
         </li>
         <!-- Landing  -->
         <li *ngIf="isDashBoard" class="nav-item">
