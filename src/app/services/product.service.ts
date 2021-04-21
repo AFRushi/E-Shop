@@ -22,7 +22,7 @@ export class ProductService {
 
   private apiServer = "http://localhost:56019/Api/";
   httpOptions = {
-    headers: new HttpHeaders({
+    headers: new HttpHeaders({ 
       'Content-Type': 'application/json'
     })
   }

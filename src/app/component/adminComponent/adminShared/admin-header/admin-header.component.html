@@ -1,5 +1,5 @@
 <!-- <p>admin-header works!</p> -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light topbar shadow">
     <!-- Sidebar Toggle (Topbar) -->
     <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
       <i class="fa fa-bars"></i>
@@ -16,19 +16,28 @@
         </div>
     </form> -->
     <!-- Topbar Navbar -->
-    <div *ngIf="isDashBoard" routerLink="/AdminLogin"> <button class="btn btn-primary">
+    <div *ngIf="isDashBoard" routerLink="/AdminLogin"> <button class="btn btn-secondary">
      Admin Login
     </button>
     </div>
 
-    <div *ngIf="role === 'user'" routerLink="/Shopping"> <button class="btn btn-primary">
+
+
+    <div *ngIf="role === 'user'" routerLink="/Shopping"> <button class="btn btn-secondary">
         Home
        </button>
     </div>
     <div class="topbar-divider d-none d-sm-block"></div>
 
 
+    <div class="text-center">
+        <img src="../../../../../assets/images/logo.png" style="width: 70px; height: 60px;"> E-SHOP
+    </div>
+
+
+
     <ul class="navbar-nav ml-auto">
+
         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
         <!-- <li class="nav-item dropdown no-arrow d-sm-none">
             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,14 +64,16 @@
         <div class="topbar-divider d-none d-sm-block"></div>
         <!-- Nav Item - User Information -->
 
+
+
         <!-- Adim  -->
         <li class="nav-item dropdown no-arrow">
             <a *ngIf="role === 'admin'" class=" nav-link dropdown-toggle " id="userDropdown" role="button " data-toggle="dropdown " aria-haspopup="true " aria-expanded="true ">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small ">Hi {{adminObj.admin_username}}</span>
+                <span class="mr-2 d-none d-lg-inline small ">Hi {{adminObj.admin_username}}</span>
                 <i class="fa fa-user " aria-hidden="true "></i>
                 <!-- <img class="img-profile rounded-circle " src="https://source.unsplash.com/QAB-WJcbgJk/60x60 "> -->
                 <div class="topbar-divider d-none d-sm-block"></div>
-                <button class="btn btn-primary" (click)="Adminlogout()">Logout</button>
+                <button class="btn btn-secondary" (click)="Adminlogout()">Logout</button>
             </a>
 
             <!-- Landing  -->
@@ -73,21 +84,21 @@
                 <button class="btn btn-primary" routerLink="/Login">Customer Login</button>
                 <!-- <img class="img-profile rounded-circle " src="https://source.unsplash.com/QAB-WJcbgJk/60x60 "> -->
                 <div class="topbar-divider d-none d-sm-block"></div>
-                <button class="btn btn-primary" routerLink="/Register">Register</button>
+                <button class="btn btn-secondary" routerLink="/Register">Register</button>
             </a>
 
             <!-- User  -->
             <a *ngIf="role === 'user'" class=" nav-link dropdown-toggle " id="userDropdown" role="button " data-toggle="dropdown " aria-haspopup="true " aria-expanded="true ">
 
-                <span class="mr-2 d-none d-lg-inline text-gray-600 big ">Hi {{userObj.name}}</span>
+                <span class="mr-2 d-none d-lg-inline big ">Hi {{userObj.name}}</span>
                 <!-- <i class="fa fa-user" aria-hidden="true "></i> -->
-                <div class="widget-header  mr-3">
+                <div class="widget-header  mr-5">
                     <a [routerLink]="['/Cart']" class="icon icon-sm rounded-circle border" data-target="#quoteForm" data-toggle="modal"><i class="fa fa-shopping-cart"></i></a>
 
                 </div>
                 <!-- <img class="img-profile rounded-circle " src="https://source.unsplash.com/QAB-WJcbgJk/60x60 "> -->
                 <div class="topbar-divider d-none d-sm-block"></div>
-                <button class="btn btn-primary" (click)="Userlogout()">Logout</button>
+                <button class="btn btn-secondary" (click)="Userlogout()">Logout</button>
             </a>
 
 
@@ -115,4 +126,5 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div> -->

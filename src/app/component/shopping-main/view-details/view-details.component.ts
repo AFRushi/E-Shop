@@ -157,12 +157,10 @@ export class ViewDetailsComponent implements  OnInit {
   /*addToCart(id: Number) {
     this.cartService.AddProductToCart(id, this.quantityInput.nativeElement.value);
   }
-
   Increase() {
     let value = parseInt(this.quantityInput.nativeElement.value);
     if (this.product.quantity >= 1){
       value++;
-
       if (value > this.product.quantity) {
         // @ts-ignore
         value = this.product.quantity;
@@ -170,15 +168,12 @@ export class ViewDetailsComponent implements  OnInit {
     } else {
       return;
     }
-
     this.quantityInput.nativeElement.value = value.toString();
   }
-
   Decrease() {
     let value = parseInt(this.quantityInput.nativeElement.value);
     if (this.product.quantity > 0){
       value--;
-
       if (value <= 0) {
         // @ts-ignore
         value = 0;

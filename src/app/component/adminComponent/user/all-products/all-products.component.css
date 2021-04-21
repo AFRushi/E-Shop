@@ -6,3 +6,19 @@
     width: 50%;
     overflow-y: scroll;
 } */
+
+.card-header {
+    background-color: #0c2949;
+    color: white;
+}
+
+.card {
+    background-color: #ece3d6;
+    color: black;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.table {
+    color: black;
+}

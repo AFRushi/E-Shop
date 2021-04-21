@@ -1,122 +1,115 @@
-<div class="col-md-4 offset-md-4">
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="guest-form-card card">
 
-    <div class="card-header margin-right:50px">
-        <h2>APPLY FOR EMI CARD</h2>
-    </div>
-    <form [formGroup]="applyemiForm" (ngSubmit)="onSubmit()" novalidate>
-        <!-- <p>
-            <label for="userid" style="text-align:left;margin-right: 150px;"><b>User Name</b></label><br>
-            <input type="text" id="userid" name="userid" formControlName="userid" [value]="user.username">
-        </p> -->
-        <!-- <div class="invalid" *ngIf="!userid?.valid && (userid?.dirty ||userid?.touched)">
-            <div [hidden]="!userid.errors.required">
-                UserId is required
+            <div class="card-header text-center">
+                <h2>APPLY FOR EMI CARD</h2>
             </div>
-        </div> -->
-        <p>
 
-            <body>
-                <ul>
-                    <li>Gold PerYear Rs.600</li>
-                    <li>Platinum PerYear Rs.1000</li>
-                </ul>
-            </body>
-            <label for="cardtype" style="text-align:left;margin-right: 120px;"><b>Card Type</b></label><br>
-            <!--  <label for="gold" style="text-align:left;margin-right: 50px;"><b>Gold</b></label>
-            <input type="checkbox" id="cardtype" name="cardtype" formControlName="cardtype"><br>
-            <label for="platinum" style="text-align:left;margin-right: 20px;"><b>Platinum</b></label>
-            <input type="checkbox" id="cardtype" name="cardtype" formControlName="cardtype"> -->
-            <select formcontrolName="cardtype" (change)="selectCardType($event.target.value)">
-                <option value="" disabled >Choose The card</option>
-                <option value="">--Select--</option>
-                <option value="Gold">Gold</option>
-                <option value="Titanium">Titanium</option>
-            </select>
-        </p>
-        <div class="invalid" *ngIf="!cardtype?.valid &&(cardtype?.dirty ||cardtype?.touched)">
-            <div [hidden]="!cardtype.errors.required">
-                Card Type is required
-            </div>
-        </div>
-        <p>
-            <label for="bankNo" style="text-align:left;margin-right: 40px;"><b>Bank Account Number</b></label><br>
-            <input type="text" id="bankNo" name="bankNo" formControlName="bankNo" placeholder="Enter Bank Account Number">
-        </p>
-        <div class="invalid" *ngIf="!bankNo?.valid && (bankNo?.dirty|| bankNo?.touched)">
-            <div [hidden]="!bankNo.errors.required">
-                Bank Account Number is required
-            </div>
-        </div>
-        <p>
-            <label for="bankName" style="text-align:left;margin-right: 150px;"><b>Bank Name</b></label>
-            <!-- <input type="number" id="bankid" name="bankid" formControlName="bankid" placeholder="Enter Bank Id"> -->
-            <select formControlName="bankName" (change)="FillBranch($event.target.value)">  
-                <option value="">--Select--</option>  
-                <option *ngFor="let bank of banks" value={{bank.bank_id}}>  
+            <div class="card-body">
+                <form [formGroup]="applyemiForm" (ngSubmit)="onSubmit()" novalidate>
+
+                    <span>
+                        <ul>
+                             <li>Gold PerYear Rs.600</li>
+                             <li>Titanium PerYear Rs.1000</li>
+                         </ul>
+                    </span>
+                    <div class="form-group">
+                        <label for="cardtype">Card Type</label><br>
+                        <select class="form-control" formcontrolName="cardtype" (change)="selectCardType($event.target.value)">
+                        <option value="" disabled >Choose The card</option>
+                        <option value="">--Select--</option>
+                        <option value="Gold">Gold</option>
+                         <option value="Titanium">Titanium</option>
+                </select>
+
+                        <div class="invalid" *ngIf="!cardtype?.valid &&(cardtype?.dirty ||cardtype?.touched)">
+                            <div [hidden]="!cardtype.errors.required">
+                                Card Type is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bankNo">Bank Account Number</label>
+                        <input type="text" id="bankNo" class="form-control" name="bankNo" formControlName="bankNo" placeholder="Enter Bank Account Number">
+
+                        <div class="invalid" *ngIf="!bankNo?.valid && (bankNo?.dirty|| bankNo?.touched)">
+                            <div [hidden]="!bankNo.errors.required">
+                                Bank Account Number is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bankName">Bank Name</label><br>
+                        <select class="form-control" formControlName="bankName" (change)="FillBranch($event.target.value)">  
+                            <option value="">--Select--</option>  
+                            <option *ngFor="let bank of banks" value={{bank.bank_id}}>  
                     {{bank.bank_name}}
                 </option>  
           </select>
 
-        </p>
-        <div class="invalid" *ngIf="!bankName?.valid &&(bankName?.dirty|| bankName?.touched)">
-            <div [hidden]="!bankName.errors.required">
-                Bank Name is required
-            </div>
-        </div>
-        <p>
-            <label for="branchNames" style="text-align:left;margin-right: 150px;"><b>Branch Names</b></label><br>
-            <!-- <input type="number" id="bankid" name="bankid" formControlName="bankid" placeholder="Enter Bank Id"> -->
-            <select formControlName="branchNames" (change)="FillIfsc($event.target.value);">  
+                        <div class="invalid" *ngIf="!bankName?.valid &&(bankName?.dirty|| bankName?.touched)">
+                            <div [hidden]="!bankName.errors.required">
+                                Bank Name is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="branchNames">Branch Name</label><br>
+                        <select class="form-control" formControlName="branchNames" (change)="FillIfsc($event.target.value);">  
                 <option value="">--Select--</option>  
                 <option *ngFor="let branch of branches" value={{branch.branch_id}}>  
                     {{branch.branch_name}}  
                 </option>  
           </select>
 
-        </p>
-        <div class="invalid" *ngIf="!branchNames?.valid &&(branchNames?.dirty|| branchNames?.touched)">
-            <div [hidden]="!branchNames.errors.required">
-                Bank Name is required
+
+                        <div class="invalid" *ngIf="!branchNames?.valid &&(branchNames?.dirty|| branchNames?.touched)">
+                            <div [hidden]="!branchNames.errors.required">
+                                Bank Name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ifsc">IFSC Code</label><br>
+                        <input type="text" id="ifsc" name="ifsc" class="form-control" formControlName="ifsc" value={{ifscSelect}}>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="aadhar">Aadhar Number</label>
+                        <input type="text" id="aadhar" name="aadhar" class="form-control" formControlName="aadhar" placeholder="Enter Aadhar Number">
+
+
+                        <div class="invalid" *ngIf="!aadhar?.valid &&(aadhar?.dirty|| aadhar?.touched)">
+                            <div [hidden]="!aadhar.errors.required">
+                                Aadhar Number is required
+                            </div>
+                            <div [hidden]="!aadhar.errors.pattern">
+                                Wrong Aadhar Number !
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pan">Pan Number</label><br>
+                        <input type="text" id="pan" name="pan" class="form-control" formControlName="pan" placeholder="Enter Pan Number">
+
+                        <div class="invalid" *ngIf="!pan?.valid &&(pan?.dirty|| pan?.touched)">
+                            <div [hidden]="!pan.errors.required">
+                                Pan Number is required
+                            </div>
+                            <div [hidden]="!pan.errors.pattern">
+                                Wrong Pan Number !
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apply">
+                        <button class="btn btn-primary btn-block">Apply</button>
+                    </div>
+                </form>
             </div>
         </div>
-
-
-        <p>
-            <label for="ifsc" style="text-align:left;margin-right: 120px;"><b>IFSC Code</b></label><br>
-            <input type="text" id="ifsc" name="ifsc" formControlName="ifsc" value={{ifscSelect}}>
-        </p>
-        <!-- <div class="invalid" *ngIf="!ifsc?.valid && (ifsc?.dirty|| ifsc?.touched)">
-            <div [hidden]="!ifsc.errors.required">
-                IFSC Code is required
-            </div>
-        </div> -->
-
-        <p>
-            <label for="aadhar" style="text-align: left;margin-right:80px;"><b>Aadhar Number</b></label><br>
-            <input type="text" id="aadhar" name="aadhar" formControlName="aadhar" placeholder="Enter Aadhar Number">
-
-        </p>
-        <div class="invalid" *ngIf="!aadhar?.valid &&(aadhar?.dirty|| aadhar?.touched)">
-            <div [hidden]="!aadhar.errors.required">
-                Aadhar Number is required
-            </div>
-            <div [hidden]="!aadhar.errors.pattern">
-                Wrong Aadhar Number !
-            </div>
-        </div>
-        <p>
-            <label for="pan" style="text-align:left;margin-right: 110px"><b>Pan Number</b></label><br>
-            <input type="text" id="pan" name="pan" formControlName="pan" placeholder="Enter Pan Number">
-        </p>
-        <div class="invalid" *ngIf="!pan?.valid &&(pan?.dirty|| pan?.touched)">
-            <div [hidden]="!pan.errors.required">
-                Pan Number is required
-            </div>
-            <div [hidden]="!pan.errors.pattern">
-                Wrong Pan Number !
-            </div>
-        </div>
-        <button type="submit" class="but"><b>Apply</b></button>
-
-    </form>
+    </div>
 </div>

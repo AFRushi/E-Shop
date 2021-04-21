@@ -45,7 +45,7 @@ export class ResetPasswordComponent implements OnInit {
 
     this.crudService.reset_pwd(forgot_pwdobj).subscribe(res => {
       console.log(res);
-      if(res == ""){
+      if(res == "Success"){
         alert("Password Successfully updated");
         this.router.navigateByUrl("/Login");
       }else{

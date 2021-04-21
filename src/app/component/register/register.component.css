@@ -1,10 +1,18 @@
-.invalid-feedback
-{
-    color:red;
+.invalid-feedback {
+    color: red;
 }
-.card-header{
-    background-color: aqua;
+
+.card-header {
+    background-color: #0c2949;
+    color: white;
+    opacity: 0.8;
 }
-.btn btn-primary btn-block{
-    background-color: blue;
+
+.btn {
+    background-color: #d6c6b0;
+    color: black;
+}
+
+.row {
+    margin-top: 10px;
 }

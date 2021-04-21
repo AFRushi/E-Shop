@@ -1,0 +1,13 @@
+.card-body{
+    background-color: #d4cdc2;
+    color: #0c2949;;
+}
+.text-muted{
+    color: #0c2949;
+}
+.btn{
+    margin-bottom: 5px;
+    background-color: #0c2949;
+    color: white;
+    border-color: #0c2949;
+}

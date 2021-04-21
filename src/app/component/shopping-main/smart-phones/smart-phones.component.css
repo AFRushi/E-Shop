@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-row {
+  display: flex;
+  justify-content: 20px;
+}
+
+
+.btn {    
+  text-decoration: none;
+  border-color: #0c2949;
+  background-color: #0c2949;
+  color: #fff; /* white */    
+  border-radius: 4px;
+}
+.btn1 {    
+  text-decoration: none;
+  background-color: #d6c6b0;
+  border-color: #d6c6b0;
+  color: rgb(19, 16, 16);     
+  border-radius: 4px;
+}
+.card {
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

@@ -36,16 +36,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MessengerService } from './services/messenger.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 import { AdminLoginComponent } from './component/login/admin-login/admin-login.component';
 import { LandingComponent } from './landing/landing.component';
 import { BodyContentComponent } from './landing/body-content/body-content.component';
 
 import { HeaderLandingComponent } from './landing/header-landing/header-landing.component';
 import { LogoutComponent } from './component/shared/logout/logout.component';
-import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
+// import { PayEmiHereComponent } from './component/shopping-main/pay-emi-here/pay-emi-here.component';
 import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
 
 
+
+import { SmartPhonesComponent } from './component/shopping-main/smart-phones/smart-phones.component';
+import { RefrigeratorsComponent } from './component/shopping-main/refrigerators/refrigerators.component';
+import { AirConditionersComponent } from './component/shopping-main/air-conditioners/air-conditioners.component';
+
+// import { LogoutComponent } from './component/shared/logout/logout.component';
+// import { LandingComponent } from './landing/landing.component';
+// import { BodyContentComponent } from './landing/body-content/body-content.component';
+// import { HeaderLandingComponent } from './landing/header-landing/header-landing.component';
+// import { ResetPasswordComponent } from './component/login/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -68,6 +79,7 @@ import { ResetPasswordComponent } from './component/login/reset-password/reset-p
     ForgotPasswordComponent,
     EmiCardComponent,
     OrderHistoryComponent,
+    PayEmiHereComponent,
     AdminComponentComponent,
     AppliedForCardComponent,
     ApprovedUsersComponent,
@@ -86,7 +98,10 @@ import { ResetPasswordComponent } from './component/login/reset-password/reset-p
     HeaderLandingComponent,
     LogoutComponent,
     PayEmiHereComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    SmartPhonesComponent,
+    RefrigeratorsComponent,
+    AirConditionersComponent,
   ],
   imports: [
     BrowserModule,

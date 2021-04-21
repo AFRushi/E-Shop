@@ -5,8 +5,9 @@
 }
 
 .emi {
-    color: black;
-    background-color: aqua;
+    color: white;
+    background-color: #0c2949;
+    /* background-color: aqua; */
     margin-top: 20px;
     margin-bottom: 20px;
 }

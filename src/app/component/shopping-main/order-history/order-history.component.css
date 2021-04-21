@@ -1,8 +1,12 @@
 body {
-	color: #566787;
+	
 	background: #f5f5f5;
 	font-family: 'Arial', sans-serif;
 	font-size: 13px;
+}
+.table-title{
+	background-color:#0c2949;
+    
 }
 .table-responsive {
     margin: 30px 0;
@@ -12,16 +16,15 @@ body {
 	background: #fff;
 	padding: 20px 25px;
 	border-radius: 3px;
-	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	
 }
-.table-wrapper .btn {
-	float: right;
-	color: #333;
-	background-color: #fff;
-	border-radius: 3px;
-	border: none;
-	outline: none !important;
-	margin-left: 10px;
+
+.table-striped{
+    background-color: #d6c6b0;
+    opacity: 0.95;
+}
+.table-striped1{
+    background-color: #fdf7ef;
 }
 .table-wrapper .btn:hover {
 	color: #333;
@@ -49,7 +52,8 @@ body {
 }
 .table-title {
 	color: #fff;
-	background: #4b5366;		
+	background: #0c2949;	
+	opacity: 0.9;
 	padding: 16px 25px;
 	margin: -20px -25px 10px;
 	border-radius: 3px 3px 0 0;
